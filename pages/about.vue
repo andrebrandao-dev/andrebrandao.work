@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="about">
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'page-index'
+  name: 'page-about'
 }
 </script>
 
 <style scoped>
-
 </style>

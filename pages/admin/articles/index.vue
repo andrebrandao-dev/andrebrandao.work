@@ -1,14 +1,12 @@
 <template>
-  <div>
-  </div>
+  <h1>Articles</h1>
 </template>
 
 <script>
 export default {
-  name: 'page-index'
+  name: 'page-admin-articles-index'
 }
 </script>
 
 <style scoped>
-
 </style>

@@ -1,14 +1,12 @@
 <template>
-  <div>
-  </div>
+  <h1>Cursos</h1>
 </template>
 
 <script>
 export default {
-  name: 'page-index'
+  name: 'page-admin-courses-slug'
 }
 </script>
 
 <style scoped>
-
 </style>

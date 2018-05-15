@@ -1,14 +1,12 @@
 <template>
-  <div>
-  </div>
+  <h1>Projeto</h1>
 </template>
 
 <script>
 export default {
-  name: 'page-index'
+  name: 'page-projects-slug'
 }
 </script>
 
 <style scoped>
-
 </style>

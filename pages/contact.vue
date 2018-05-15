@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="contact">
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'page-index'
+  name: 'page-contact'
 }
 </script>
 
 <style scoped>
-
 </style>
