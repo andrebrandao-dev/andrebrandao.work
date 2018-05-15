@@ -1,0 +1,19 @@
+{
+  "name": "andrebrandao.work",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "author": "André Brandão",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^1.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1"
+  }
+}
