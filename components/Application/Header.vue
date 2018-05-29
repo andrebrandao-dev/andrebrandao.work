@@ -1,6 +1,6 @@
 <template>
   <header>
-  <h1>André Brandão</h1>
+  <!-- <h1>André Brandão</h1> -->
   </header>
 </template>
 

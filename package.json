@@ -12,7 +12,9 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
   },
   "devDependencies": {
     "cross-env": "^5.0.1"

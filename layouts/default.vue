@@ -16,5 +16,6 @@
   }
 </script>
 
-<style>
+<style lang="stylus">
+@import '../assets/styles/general.styl'
 </style>
