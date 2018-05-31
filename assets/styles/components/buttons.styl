@@ -1,0 +1,51 @@
+.btn
+  padding .750rem 1.750rem
+  display inline-block
+  border-radius 0px
+  border 1px solid transparent
+  cursor pointer
+  box-shadow none
+  transition all .3s
+
+  &-primary
+    background-color $primary
+    color $ligth
+    &:hover
+      box-shadow 0 0 0 3px rgba($primary, .5)
+  &-secondary
+    background-color $secondary
+    color $ligth
+    &:hover
+      box-shadow 0 0 0 3px rgba($secondary, .5)
+  &-ligth
+    background-color $ligth
+    color $primary
+    &:hover
+      box-shadow 0 0 0 3px rgba($ligth, .5)
+  &-success
+    background-color $success
+    color $ligth
+    &:hover
+      box-shadow 0 0 0 3px rgba($success, .5)
+  &-warning
+    background-color $warning
+    color $ligth
+    &:hover
+      box-shadow 0 0 0 3px rgba($warning, .5)
+  &-danger
+    background-color $danger
+    color $ligth
+    &:hover
+      box-shadow 0 0 0 3px rgba($danger, .5)
+  &-info
+    background-color $info
+    color $ligth
+    &:hover
+      box-shadow 0 0 0 3px rgba($info, .5)
+
+  & + .btn
+    margin-left 10px
+
+  &:focus,
+  &:active
+    outline none
