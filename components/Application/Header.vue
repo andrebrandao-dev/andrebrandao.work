@@ -3,7 +3,7 @@
     <div class="app-header-content">
       <h1 class="app-header-title">
         {
-          <span>status: 'construction'</span>
+          <span>status: 'in development'</span>
         }
       </h1>
     </div>
