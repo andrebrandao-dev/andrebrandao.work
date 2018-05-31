@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1>Index</h1>
-  </div>
+
 </template>
 
 <script>
@@ -11,6 +9,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="stylus">
+  .section
+    position relative
+    width 100%
+    height auto
+    padding 50px 0
+    &-about
+      // background-image url('~/static/images/coisinha.png')
+      background-repeat repeat-x
+      background-size 100px auto
 
 </style>
