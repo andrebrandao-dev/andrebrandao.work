@@ -1,7 +1,7 @@
 <template>
-  <header class="app-header">
-    <h1>Header</h1>
-  </header>
+  <Footer class="app-footer">
+    <h1>Footer</h1>
+  </Footer>
 </template>
 
 <script>
@@ -21,14 +21,14 @@ export default {
 
 <style scoped lang="stylus">
 
-  .app-header
+  .app-footer
     position fixed
-    top 0
+    bottom 0
     left 0
     right 0
     width 100%
     height 60px
-    border-bottom 1px solid black
+    border-top 1px solid black
     display flex
     justify-content center
     align-items center
