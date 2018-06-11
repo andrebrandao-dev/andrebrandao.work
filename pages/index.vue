@@ -1,5 +1,18 @@
 <template>
   <div>
+    <section class="section section-about">
+      <div class="section-body">
+        <Gravatar class="avatar avatar-ligth" :email="my.email"/>
+        <h1 class="section-about-title">
+          Hi, I'm
+          <strong>{{ my.name }}</strong>
+        </h1>
+
+        <nuxt-link class="btn-outline btn-outline-ligth" exact to="/about" title="More about me">
+          More about me
+        </nuxt-link>
+      </div>
+    </section>
     <section class="section">
       <header class="section-header">
         <h1 class="section-header-title">Projetos</h1>
@@ -19,8 +32,21 @@
 </template>
 
 <script>
+import Gravatar from 'vue-gravatar'
+
 export default {
-  name: 'page-index'
+  name: 'page-index',
+  components: {
+    Gravatar
+  },
+  data() {
+    return {
+      my: {
+        name: 'André Brandão',
+        email: 'andrebf4@gmail.com'
+      }
+    }
+  }
 }
 </script>
 
@@ -30,15 +56,4 @@ export default {
     width 100%
     height auto
     padding 50px 0
-
-    &:nth-child(1)
-      border 1px solid cyan
-    &:nth-child(2)
-      border 1px solid magenta
-    &:nth-child(3)
-      border 1px solid purple
-
-    &-header
-      text-align center
-
 </style>

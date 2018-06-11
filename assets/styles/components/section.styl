@@ -1,0 +1,31 @@
+.section
+  position relative
+  width 100%
+  height auto
+  padding 50px 0
+
+  // About Section
+
+  &-about
+    background-image url('~static/images/cover.jpg')
+    cover()
+    text-align center
+    position relative
+
+    &:before
+      chalkboard-before(.6)
+
+    &-title
+      font-size 3rem
+      color $ligth
+      font-weight 300
+      margin 30px 0
+      text-transform uppercase
+      letter-spacing .3rem
+      text-shadow 2px 2px 10px rgba(0, 0, 0, 1)
+      strong
+        font-weight 400
+
+  &-body
+    position relative
+    z-index 5

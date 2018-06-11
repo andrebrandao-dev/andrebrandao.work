@@ -1,37 +1,22 @@
 <template>
   <header class="app-header">
-    <h1>Header</h1>
+    <div class="container">
+      <Navbar />
+    </div>
   </header>
 </template>
 
 <script>
+import Navbar from '@/components/Application/Navbar'
 
 export default {
-  name: 'component-application-header',
-  data() {
-    return {
-      email: 'andrebf4@gmail.com'
-    }
+  components: {
+    Navbar
   },
-  mounted() {
-
-  }
+  name: 'component-application-header',
 }
 </script>
 
 <style scoped lang="stylus">
-
-  .app-header
-    position fixed
-    top 0
-    left 0
-    right 0
-    width 100%
-    height 60px
-    border-bottom 1px solid black
-    display flex
-    justify-content center
-    align-items center
-    background-color #FFF
 
 </style>
