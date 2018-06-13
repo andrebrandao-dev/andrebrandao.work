@@ -28,7 +28,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    './node_modules/ionicons/dist/css/ionicons.min.css'
+    './node_modules/ionicons/dist/css/ionicons.min.css',
+    './node_modules/swiper/dist/css/swiper.min.css'
   ],
 
   /*
