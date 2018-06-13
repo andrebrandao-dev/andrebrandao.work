@@ -3,13 +3,15 @@
     <!-- About Section -->
     <section class="section section-about">
       <div class="section-body">
-        <Gravatar class="avatar avatar-ligth" :email="my.email"/>
-        <h1 class="section-about-title">
-          Hi, I'm
-          <strong>{{ my.name }}</strong>
-        </h1>
+        <div class="wow fadeInDown">
+          <Gravatar class="avatar avatar-ligth" :email="my.email"/>
+          <h1 class="section-about-title">
+            Hi, I'm
+            <strong>{{ my.name }}</strong>
+          </h1>
+        </div>
 
-        <nuxt-link class="btn-outline btn-outline-ligth" exact to="/about" title="More about me">
+        <nuxt-link class="btn-outline btn-outline-ligth wow fadeInUp" exact to="/about" title="More about me">
           More about me
         </nuxt-link>
       </div>
@@ -17,29 +19,38 @@
 
     <!-- Projects Section -->
     <section class="section bg-ligth">
-      <header class="section-header">
+      <header class="section-header wow fadeInRight">
         <i class="icon-circled icon-circled-primary ion ion-md-book"></i>
         <h1 class="section-header-title">Projetos</h1>
         <span class="section-header-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
       </header>
+      <div class="section-body">
+
+      </div>
     </section>
 
     <!-- Articles Section -->
     <section class="section bg-success">
-      <header class="section-header">
+      <header class="section-header wow fadeInLeft">
         <i class="icon-circled icon-circled-primary ion ion-md-book"></i>
         <h1 class="section-header-title">Artigos</h1>
         <span class="section-header-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
       </header>
+      <div class="section-body">
+
+      </div>
     </section>
 
     <!-- Courses Section -->
     <section class="section bg-ligth">
-      <header class="section-header">
+      <header class="section-header wow fadeInRight">
         <i class="icon-circled icon-circled-primary ion ion-md-book"></i>
         <h1 class="section-header-title">Cursos</h1>
         <span class="section-header-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
       </header>
+      <div class="section-body">
+
+      </div>
     </section>
   </div>
 </template>

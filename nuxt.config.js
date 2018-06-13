@@ -13,9 +13,13 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       // { hid: 'description', name: 'description', content: pkg.description }
     ],
+    script: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js' }
+    ],
     link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600,700' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' }
     ]
   },
 
@@ -31,7 +35,6 @@ module.exports = {
     './node_modules/ionicons/dist/css/ionicons.min.css',
     './node_modules/swiper/dist/css/swiper.min.css'
   ],
-
   /*
   ** Plugins to load before mounting the App
   */

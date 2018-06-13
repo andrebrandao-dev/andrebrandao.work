@@ -9,16 +9,20 @@
 </template>
 
 <script>
-  import Header from '@/components/Application/Header'
-  import Footer from '@/components/Application/Footer'
+// Components
+import Header from '@/components/Application/Header'
+import Footer from '@/components/Application/Footer'
 
-  export default {
-    name: 'layout-default',
-    components: {
-      Header,
-      Footer
-    }
+export default {
+  name: 'layout-default',
+  components: {
+    Header,
+    Footer
+  },
+  mounted() {
+    new WOW().init()
   }
+}
 </script>
 
 <style lang="stylus">
