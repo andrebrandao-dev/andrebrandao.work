@@ -26,6 +26,21 @@
       </header>
       <div class="section-body">
 
+        <div class="card">
+          <div class="card-header cover" style="background-image: url('https://matheuslima.com.br/uploads/02df72283b28f5885266c572f87b0406.png');">
+            <span class="sr-only">Projeto Name</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-body-title">Projeto Name</h3>
+            <p class="card-body-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="card-footer" style="background-color: #fad45c">
+            <span class="card-footer-item">Vue Js</span>
+            <span class="card-footer-item">Laravel</span>
+            <span class="card-footer-item">Mobile</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
