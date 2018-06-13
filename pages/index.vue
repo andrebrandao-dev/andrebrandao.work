@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- About Section -->
     <section class="section section-about">
       <div class="section-body">
         <Gravatar class="avatar avatar-ligth" :email="my.email"/>
@@ -13,19 +14,31 @@
         </nuxt-link>
       </div>
     </section>
-    <section class="section">
+
+    <!-- Projects Section -->
+    <section class="section bg-ligth">
       <header class="section-header">
+        <i class="icon-circled icon-circled-primary ion ion-md-book"></i>
         <h1 class="section-header-title">Projetos</h1>
+        <span class="section-header-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
       </header>
     </section>
-    <section class="section">
+
+    <!-- Articles Section -->
+    <section class="section bg-success">
       <header class="section-header">
+        <i class="icon-circled icon-circled-primary ion ion-md-book"></i>
         <h1 class="section-header-title">Artigos</h1>
+        <span class="section-header-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
       </header>
     </section>
-    <section class="section">
+
+    <!-- Courses Section -->
+    <section class="section bg-ligth">
       <header class="section-header">
+        <i class="icon-circled icon-circled-primary ion ion-md-book"></i>
         <h1 class="section-header-title">Cursos</h1>
+        <span class="section-header-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
       </header>
     </section>
   </div>
