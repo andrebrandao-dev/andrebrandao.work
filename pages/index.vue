@@ -71,8 +71,11 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Gravatar from 'vue-gravatar'
 
+const token = '276b049bd3812e1b5677fa27256a4a421e7892ab4f2d91746ebfe01083c67c546'
+const mediumID = '16f7304dcd9b'
 export default {
   name: 'page-index',
   components: {
@@ -85,6 +88,15 @@ export default {
         email: 'andrebf4@gmail.com'
       }
     }
+  },
+  mounted () {
+    axios.get(`https://api.medium.com/v1/users/${ mediumID }/posts`)
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 }
 </script>
