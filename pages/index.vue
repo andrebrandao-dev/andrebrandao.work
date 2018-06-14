@@ -90,13 +90,13 @@ export default {
     }
   },
   mounted () {
-    axios.get(`https://api.medium.com/v1/users/${ mediumID }/posts`)
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    // axios.get(`https://api.medium.com/v1/users/${ mediumID }/publications?accessToken=${ token }&scope=listPublications`)
+    //   .then((response) => {
+    //     console.log(response)
+    //   })
+    //   .catch((error) => {
+    //     console.log(error)
+    //   })
   }
 }
 </script>

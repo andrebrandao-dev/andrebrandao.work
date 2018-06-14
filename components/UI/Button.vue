@@ -1,7 +1,5 @@
 <template>
   <button
-    class="btn"
-    :class="`btn-${ theme }`"
     v-bind="$attrs"
     v-on="$listeners"
   >
@@ -11,12 +9,6 @@
 
 <script>
 export default {
-  name: 'Button',
-  props: {
-    theme: {
-      type: String,
-      default: ''
-    }
-  }
+  name: 'Button'
 }
 </script>
