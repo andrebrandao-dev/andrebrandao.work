@@ -26,9 +26,6 @@ export default {
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         animation: 'fadeInRight',
         icon: 'ion-md-book'
-      },
-      form: {
-        name: '', email: '', message: ''
       }
     }
   }
