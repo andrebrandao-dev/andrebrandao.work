@@ -4,7 +4,8 @@
 
 <script>
 export default {
-  name: 'page-admin-projects-create'
+  name: 'page-admin-projects-create',
+  layout: 'admin'
 }
 </script>
 

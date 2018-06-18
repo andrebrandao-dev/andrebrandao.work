@@ -26,5 +26,5 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../assets/styles/general.styl'
+  @import '../assets/styles/general.styl'
 </style>

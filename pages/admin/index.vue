@@ -4,7 +4,8 @@
 
 <script>
 export default {
-  name: 'page-admin-index'
+  name: 'page-admin-index',
+  layout: 'admin'
 }
 </script>
 

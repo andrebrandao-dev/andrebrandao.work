@@ -4,7 +4,8 @@
 
 <script>
 export default {
-  name: 'page-admin-projects-slug'
+  name: 'page-admin-projects-slug',
+  layout: 'admin'
 }
 </script>
 

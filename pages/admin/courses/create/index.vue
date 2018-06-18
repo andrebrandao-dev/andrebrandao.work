@@ -4,7 +4,8 @@
 
 <script>
 export default {
-  name: 'page-admin-courses-create'
+  name: 'page-admin-courses-create',
+  layout: 'admin'
 }
 </script>
 

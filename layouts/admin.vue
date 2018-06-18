@@ -1,20 +1,23 @@
 <template>
   <div>
     <Header />
-    <nuxt/>
+    <div class="first-container">
+      <nuxt/>
+    </div>
   </div>
 </template>
 
 <script>
-  import Header from '@/components/Application/Header'
+import Header from '@/components/Admin/Header'
 
-  export default {
-    name: 'layout-admin',
-    components: {
-      Header
-    }
+export default {
+  name: 'layout-admin',
+  components: {
+    Header
   }
+}
 </script>
 
-<style>
+<style lang="stylus">
+  @import '../assets/styles/general.styl'
 </style>

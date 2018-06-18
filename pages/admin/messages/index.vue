@@ -1,10 +1,10 @@
 <template>
-  <h1>Cursos</h1>
+  <h1>Messages</h1>
 </template>
 
 <script>
 export default {
-  name: 'page-admin-courses-slug',
+  name: 'page-admin-messages-index',
   layout: 'admin'
 }
 </script>

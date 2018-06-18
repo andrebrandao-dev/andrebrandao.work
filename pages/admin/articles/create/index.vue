@@ -4,7 +4,8 @@
 
 <script>
 export default {
-  name: 'page-admin-articles-create'
+  name: 'page-admin-articles-create',
+  layout: 'admin'
 }
 </script>
 
