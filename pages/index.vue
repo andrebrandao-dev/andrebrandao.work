@@ -21,7 +21,7 @@
     <Section color="ligth" :sectionHeader="sectionProjectsHeader">
       <div slot="body" class="section-body">
         <div class="container">
-          <div class="card">
+          <div class="card" @click="setTest('Teste')">
             <div class="card-header cover" style="background-image: url('https://matheuslima.com.br/uploads/02df72283b28f5885266c572f87b0406.png');">
               <span class="sr-only">Projeto Name</span>
             </div>
@@ -60,7 +60,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 // Components
 import Gravatar from 'vue-gravatar'
@@ -101,15 +100,6 @@ export default {
       }
     }
   },
-  mounted () {
-    // axios.get(`https://api.medium.com/v1/users/${ mediumID }/publications?accessToken=${ token }&scope=listPublications`)
-    //   .then((response) => {
-    //     console.log(response)
-    //   })
-    //   .catch((error) => {
-    //     console.log(error)
-    //   })
-  }
 }
 </script>
 
