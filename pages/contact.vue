@@ -2,12 +2,7 @@
   <Section color="ligth" :sectionHeader="sectionHeader">
     <div slot="body" class="section-body">
       <div class="container">
-        <form class="form" @submit.prevent="submitForm">
-          <Input label="Name" v-model="form.name" />
-          <Input label="Email" v-model="form.email" />
-          <Input label="Message" controlType="textarea" v-model="form.message" />
-          <Button class="btn btn-primary" type="submit">Submit</Button>
-        </form>
+        <FormContact />
       </div>
     </div>
   </Section>
@@ -16,15 +11,13 @@
 <script>
 // Components
 import Section from '@/components/UI/Section'
-import Input from '@/components/UI/Input'
-import Button from '@/components/UI/Button'
+import FormContact from '@/components/Application/FormContact'
 
 export default {
   name: 'page-contact',
   components: {
     Section,
-    Input,
-    Button
+    FormContact
   },
   data() {
     return {
@@ -38,18 +31,6 @@ export default {
         name: '', email: '', message: ''
       }
     }
-  },
-  methods: {
-    submitForm() {
-      console.log(this.form)
-    }
   }
 }
 </script>
-
-<style scoped lang="stylus">
-  .container
-    margin-top 50px
-    margin-bottom 50px
-
-</style>

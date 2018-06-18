@@ -1,7 +1,6 @@
 <template>
   <div class="form-group">
-    <label class="form-group-label">
-      {{ label }}
+    <label :title="label">
       <input
         class="form-group-control"
         :placeholder="label"
@@ -11,7 +10,7 @@
         @input="$emit('input', $event.target.value)"
       >
       <textarea
-        class="form-group-control"
+        class="form-group-control textarea"
         :placeholder="label"
         v-if="controlType === 'textarea'"
         rows="10"
@@ -19,6 +18,9 @@
         @input="$emit('input', $event.target.value)"
       >
       </textarea>
+      <i class="form-group-icon ion" :class="icon"></i>
+      <span class="sr-only">{{ label }}</span>
+      <span class="form-group-border"></span>
     </label>
   </div>
 </template>
@@ -30,6 +32,10 @@ export default {
     controlType: {
       type: String,
       default: 'input'
+    },
+    icon: {
+      type: String,
+      required: true
     },
     value: {
       type: String,
