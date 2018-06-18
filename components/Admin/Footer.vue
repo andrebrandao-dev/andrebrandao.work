@@ -6,7 +6,7 @@
 <script>
 
 export default {
-  name: 'component-application-footer',
+  name: 'component-admin-footer',
   data() {
     return {
     }

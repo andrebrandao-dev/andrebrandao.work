@@ -14,6 +14,9 @@
 
     <ul class="app-nav-list start side" :class="{ 'is-opened': isOpened }">
       <li class="app-nav-item">
+        <nuxt-link class="app-nav-link" exact to="/" title="Site">Site</nuxt-link>
+      </li>
+      <li class="app-nav-item">
         <nuxt-link class="app-nav-link" exact to="/admin" title="Admin">Admin</nuxt-link>
       </li>
       <li class="app-nav-item">
@@ -21,6 +24,9 @@
       </li>
       <li class="app-nav-item">
         <nuxt-link class="app-nav-link" exact to="/admin/projects" title="Projects">Projects</nuxt-link>
+      </li>
+      <li class="app-nav-item">
+        <nuxt-link class="app-nav-link" exact to="/admin/recommendations" title="Recommendations">Recommendations</nuxt-link>
       </li>
       <li class="app-nav-item">
         <nuxt-link class="app-nav-link" exact to="/admin/messages" title="Messages">Messages</nuxt-link>

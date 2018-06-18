@@ -4,16 +4,22 @@
     <div class="first-container">
       <nuxt/>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Admin/Header'
+import Footer from '@/components/Admin/Footer'
 
 export default {
   name: 'layout-admin',
   components: {
-    Header
+    Header,
+    Footer
+  },
+  mounted() {
+    new WOW().init()
   }
 }
 </script>
