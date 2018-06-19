@@ -1,3 +1,3 @@
-// export const getTest = (state) => {
-//   return state.teste
-// }
+export const submittedMessages = (state) => {
+  return state.messages
+}
