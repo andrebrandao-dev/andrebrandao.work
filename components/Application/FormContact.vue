@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 
 // Components
 import Input from '@/components/UI/Input'
@@ -33,8 +34,10 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['sendMessage']),
+
     submitForm() {
-      console.log(this.form)
+      this.sendMessage(this.form)
     }
   }
 }

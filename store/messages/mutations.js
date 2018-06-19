@@ -1,3 +1,3 @@
-// export const setTest = (state, t) => {
+// export const sendMessage = (state, message) => {
 //   state.teste = t
 // }

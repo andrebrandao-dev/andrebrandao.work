@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const axios = require('axios')
 
 module.exports = {
   mode: 'universal',
@@ -39,13 +40,20 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    // '~/plugins/vue-notifications'
   ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
   ],
+
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://andrebrandao-work.firebaseio.com',
+    credentials: false
+  },
 
   /*
   ** Build configuration
@@ -57,6 +65,11 @@ module.exports = {
     extend(config, ctx) {
 
     }
+  },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://andrebrandao-work.firebaseio.com',
+    fbKey: 'AIzaSyAK-Pm-zs_WCU-ladN-mr3LPKC5QLGbwzc'
   },
 
   router: {

@@ -17,7 +17,7 @@ export default {
   name: 'layout-default',
   components: {
     Header,
-    Footer
+    Footer,
   },
   mounted() {
     new WOW().init()

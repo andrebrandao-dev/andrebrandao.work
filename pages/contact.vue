@@ -1,23 +1,30 @@
 <template>
-  <Section color="ligth" :sectionHeader="sectionHeader">
-    <div slot="body" class="section-body">
-      <div class="container">
-        <FormContact />
+  <div>
+    <Loading v-if="isLoading" message="Sending message"/>
+    <Section color="ligth" :sectionHeader="sectionHeader">
+      <div slot="body" class="section-body">
+        <div class="container">
+          <FormContact />
+        </div>
       </div>
-    </div>
-  </Section>
+    </Section>
+  </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 // Components
 import Section from '@/components/UI/Section'
 import FormContact from '@/components/Application/FormContact'
+import Loading from '@/components/UI/Loading'
 
 export default {
   name: 'page-contact',
   components: {
     Section,
-    FormContact
+    FormContact,
+    Loading
   },
   data() {
     return {
@@ -28,6 +35,9 @@ export default {
         icon: 'ion-md-book'
       }
     }
+  },
+  computed: {
+    ...mapGetters(['isLoading'])
   }
 }
 </script>
