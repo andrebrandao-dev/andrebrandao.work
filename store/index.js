@@ -1,33 +1,28 @@
 import Vuex from 'vuex'
 
 // Modules
+import moduleGeneral from './general'
 import moduleMessages from './messages'
 
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      loading: false,
+      ...moduleGeneral.state,
       ...moduleMessages.state
     },
 
     mutations: {
-      setLoading (state, status) {
-        state.loading = status
-      },
+      ...moduleGeneral.mutations,
       ...moduleMessages.mutations
     },
 
     actions: {
-      setLoading (vuexContext, status) {
-        vuexContext.commit('setLoading', status)
-      },
+      ...moduleGeneral.actions,
       ...moduleMessages.actions
     },
 
     getters: {
-      isLoading (state) {
-        return state.loading
-      },
+      ...moduleGeneral.getters,
       ...moduleMessages.getters
     }
   })

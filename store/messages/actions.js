@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import axios from 'axios'
 
 export const sendMessage = (vuexContext, message) => {
 
