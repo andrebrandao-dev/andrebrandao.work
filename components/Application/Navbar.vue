@@ -20,7 +20,7 @@
         <nuxt-link class="app-nav-link" exact to="/about" title="About">About</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" exact to="/projects" title="Projects">Projects</nuxt-link>
+        <nuxt-link class="app-nav-link" to="/projects" title="Projects">Projects</nuxt-link>
       </li>
       <li class="app-nav-item">
         <nuxt-link class="app-nav-link" exact to="/articles" title="Articles">Articles</nuxt-link>

@@ -20,9 +20,6 @@
         <nuxt-link class="app-nav-link" exact to="/admin" title="Admin">Admin</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" exact to="/admin/courses" title="Courses">Courses</nuxt-link>
-      </li>
-      <li class="app-nav-item">
         <nuxt-link class="app-nav-link" exact to="/admin/projects" title="Projects">Projects</nuxt-link>
       </li>
       <li class="app-nav-item">
