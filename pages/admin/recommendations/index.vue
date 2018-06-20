@@ -5,7 +5,8 @@
 <script>
 export default {
   name: 'page-admin-recommendations-index',
-  layout: 'admin'
+  layout: 'admin',
+  middleware: ['check-auth', 'auth']
 }
 </script>
 

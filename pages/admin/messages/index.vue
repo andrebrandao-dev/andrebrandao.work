@@ -30,6 +30,7 @@ import Section from '@/components/UI/Section'
 export default {
   name: 'page-admin-messages-index',
   layout: 'admin',
+  middleware: ['check-auth', 'auth'],
   components: {
     Gravatar,
     Section
