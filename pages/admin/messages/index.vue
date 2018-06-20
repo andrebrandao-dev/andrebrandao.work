@@ -1,5 +1,5 @@
 <template>
-  <Section color="ligth" :sectionHeader="sectionHeader">
+  <Section color="danger" :sectionHeader="sectionHeader">
     <div slot="body" class="section-body">
       <div class="container">
         <div class="columns">

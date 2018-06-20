@@ -34,7 +34,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['sendMessage']),
+    ...mapActions(['saveProject']),
 
     submitForm() {
       this.sendMessage(this.form)

@@ -21,20 +21,31 @@
     <Section color="ligth" :sectionHeader="sectionProjectsHeader">
       <div slot="body" class="section-body">
         <div class="container">
-          <div class="card" @click="setTest('Teste')">
-            <div class="card-header cover" style="background-image: url('https://matheuslima.com.br/uploads/02df72283b28f5885266c572f87b0406.png');">
-              <span class="sr-only">Projeto Name</span>
-            </div>
-            <div class="card-body">
-              <h3 class="card-body-title">Projeto Name</h3>
-              <p class="card-body-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div class="card-footer" style="background-color: #fad45c">
-              <span class="card-footer-item">Vue Js</span>
-              <span class="card-footer-item">Laravel</span>
-              <span class="card-footer-item">Mobile</span>
+          <div class="columns projects">
+            <div class="col" v-for="(project, index) in activedProjects" v-if="index < 3">
+              <nuxt-link :to="`/projects/${ project.slug }`" :title="project.title">
+                <div class="card">
+                  <div class="card-header cover" :style="{ backgroundImage: `url(${ project.thumbnail })` }">
+                    <span class="sr-only">{{ project.title }}</span>
+                  </div>
+                  <div class="card-body">
+                    <h3 class="card-body-title">{{ project.title }}</h3>
+                    <p class="card-body-text resumed">{{ project.content }}</p>
+                  </div>
+                  <div class="card-footer" :style="{ backgroundColor: project.color }">
+                    <span class="card-footer-item" v-for="tag in project.tags">{{ tag }}</span>
+                  </div>
+                </div>
+              </nuxt-link>
             </div>
           </div>
+        </div>
+      </div>
+      <div slot="footer" class="section-footer">
+        <div class="t-center">
+          <nuxt-link class="btn btn-primary" exact to="/projects" title="More projects">
+            More projects
+          </nuxt-link>
         </div>
       </div>
     </Section>
@@ -48,25 +59,15 @@
       </div>
     </Section>
 
-    <!-- Courses Section -->
-    <Section color="ligth" :sectionHeader="sectionCoursesHeader">
-      <div slot="body" class="section-body">
-        <div class="container">
-
-        </div>
-      </div>
-    </Section>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 
 // Components
 import Gravatar from 'vue-gravatar'
 import Section from '@/components/UI/Section'
-
-const token = '276b049bd3812e1b5677fa27256a4a421e7892ab4f2d91746ebfe01083c67c546'
-const mediumID = '16f7304dcd9b'
 
 export default {
   name: 'page-index',
@@ -88,25 +89,22 @@ export default {
         animation: 'fadeInLeft',
         icon: 'ion-md-book'
       },
-      sectionCoursesHeader: {
-        title: 'Courses',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-        animation: 'fadeInRight',
-        icon: 'ion-md-book'
-      },
       my: {
         name: 'André Brandão',
         email: 'andrebf4@gmail.com'
       }
     }
   },
+
+  computed: {
+    ...mapGetters(['activedProjects'])
+  },
+
 }
 </script>
 
 <style scoped lang="stylus">
-  .section
-    position relative
-    width 100%
-    height auto
-    padding 50px 0
+  .columns.projects
+    .col
+      width 33.333%
 </style>

@@ -4,10 +4,11 @@
       <input
         class="form-group-control"
         :placeholder="label"
-        v-if="controlType === 'input'"
+        v-if="controlType !== 'textarea'"
         v-bind="$attrs"
         :value="value"
         @input="$emit('input', $event.target.value)"
+        @change="$emit('change', $event)"
       >
       <textarea
         class="form-group-control textarea"
@@ -19,6 +20,7 @@
       >
       </textarea>
       <i class="form-group-icon ion" :class="icon"></i>
+      <i class="form-group-helper add-tag ion ion-md-add" v-if="helper" @click="$emit('saveHelper')"></i>
       <span class="sr-only">{{ label }}</span>
       <span class="form-group-border"></span>
     </label>
@@ -32,6 +34,10 @@ export default {
     controlType: {
       type: String,
       default: 'input'
+    },
+    helper: {
+      type: Boolean,
+      default: false
     },
     icon: {
       type: String,

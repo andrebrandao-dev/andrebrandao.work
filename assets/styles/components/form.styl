@@ -29,6 +29,18 @@
       transition color .3s
       color $primary
 
+    &-helper
+      display flex
+      align-items center
+      justify-content flex-end
+      position absolute
+      height 36px
+      width 36px
+      top calc(50% - 18px)
+      right 0
+      cursor pointer
+      font-size 1.4rem
+
     &-border
       position absolute
       bottom 0
@@ -60,6 +72,10 @@
       &::placeholder
         color rgba($primary, 1)
         opacity 1
+
+      &:disabled
+        opacity .6
+        cursor not-allowed
 
       &.textarea
         overflow hidden

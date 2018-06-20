@@ -7,6 +7,7 @@
       <span class="section-header-subtitle">{{ sectionHeader.subtitle }}</span>
     </header>
     <slot name="body" />
+    <slot name="footer" />
   </section>
 </template>
 
