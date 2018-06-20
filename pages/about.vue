@@ -1,7 +1,7 @@
 <template>
   <section class="section bg-ligth">
     <header class="section-header wow fadeInRight">
-      <i class="icon-circled icon-circled-primary ion ion-md-book"></i>
+      <i class="icon-circled icon-circled-primary ion ion-md-person"></i>
       <h1 class="section-header-title">Sobre</h1>
     </header>
     <div class="section-body">

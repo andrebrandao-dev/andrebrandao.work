@@ -22,7 +22,7 @@
       <div slot="body" class="section-body">
         <div class="container">
           <div class="columns projects">
-            <div class="col" v-for="(project, index) in activedProjects" v-if="index < 3">
+            <div class="col wow fadeInLeft" v-for="(project, index) in activedProjects" v-if="index < 3">
               <nuxt-link :to="`/projects/${ project.slug }`" :title="project.title">
                 <div class="card">
                   <div class="card-header cover" :style="{ backgroundImage: `url(${ project.thumbnail })` }">
@@ -81,7 +81,7 @@ export default {
         title: 'Projects',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         animation: 'fadeInRight',
-        icon: 'ion-md-book'
+        icon: 'ion-md-code-working'
       },
       sectionArticlesHeader: {
         title: 'Articles',

@@ -32,7 +32,7 @@ export default {
         title: 'Contact',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         animation: 'fadeInRight',
-        icon: 'ion-md-book'
+        icon: 'ion-md-mail'
       }
     }
   },
