@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 
 // Components
 import Input from '@/components/UI/Input'
@@ -33,10 +32,12 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['authenticateUser']),
 
     submitForm() {
-      this.authenticateUser(this.form)
+      this.$store.dispatch('authenticateUser', this.form)
+        .then(() => {
+          this.$router.push('/admin')
+        })
     }
   }
 }

@@ -32,7 +32,7 @@
 
     <ul class="app-nav-list end">
       <li class="app-nav-item">
-        <button class="app-nav-link github" type="button" title="Sair">
+        <button class="app-nav-link github pointer" type="button" title="Sair" @click="onLogout">
           <i class="ion ion-md-log-out f-1-5"></i>
           <span class="sr-only">Sair</span>
         </button>
@@ -42,11 +42,20 @@
 </template>
 
 <script>
+
 export default {
   name: 'component-admin-header',
   data () {
     return {
       isOpened: false
+    }
+  },
+  methods: {
+    onLogout () {
+      this.$store.dispatch('logout')
+        .then(() => {
+          this.$router.push('/')
+        })
     }
   }
 }
