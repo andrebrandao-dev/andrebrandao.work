@@ -2,9 +2,9 @@
   <nav class="app-nav">
     <ul class="app-nav-list start mobile">
       <li class="app-nav-item">
-        <button type="button" class="app-nav-link active" name="button" @click="isOpened = !isOpened">
-          <i class="ion f-1-5" :class="isOpened ? 'ion-md-close' : 'ion-md-menu'"></i>
-          <span class="sr-only">{{ isOpened ? 'Close Menu' : 'Open Menu' }}</span>
+        <button type="button" class="app-nav-link active" name="button" @click="toggleMenu(!menuIsClosed)">
+          <i class="ion f-1-5" :class="menuIsClosed ? 'ion-md-close' : 'ion-md-menu'"></i>
+          <span class="sr-only">{{ menuIsClosed ? 'Close Menu' : 'Open Menu' }}</span>
         </button>
       </li>
       <li class="app-nav-item">
@@ -12,7 +12,7 @@
       </li>
     </ul>
 
-    <ul class="app-nav-list start side" :class="{ 'is-opened': isOpened }">
+    <ul class="app-nav-list start side" :class="{ 'is-opened': menuIsClosed }">
       <li class="app-nav-item">
         <nuxt-link class="app-nav-link" exact to="/" title="Site">Site</nuxt-link>
       </li>
@@ -42,15 +42,16 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'component-admin-header',
-  data () {
-    return {
-      isOpened: false
-    }
+  computed: {
+    ...mapGetters(['menuIsClosed'])
   },
   methods: {
+    ...mapActions(['toggleMenu']),
+
     onLogout () {
       this.$store.dispatch('logout')
         .then(() => {

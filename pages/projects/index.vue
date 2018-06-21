@@ -17,6 +17,7 @@ import ProjectList from '@/components/Application/ProjectList'
 
 export default {
   name: 'page-projects-index',
+  middleware: ['menu'],
   components: {
     Section,
     ProjectList

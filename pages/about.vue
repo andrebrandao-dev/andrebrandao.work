@@ -14,7 +14,8 @@
 
 <script>
 export default {
-  name: 'page-about'
+  name: 'page-about',
+  middleware: ['menu'],
 }
 </script>
 

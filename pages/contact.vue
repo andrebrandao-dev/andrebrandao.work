@@ -21,6 +21,7 @@ import Loading from '@/components/UI/Loading'
 
 export default {
   name: 'page-contact',
+  middleware: ['menu'],
   components: {
     Section,
     FormContact,

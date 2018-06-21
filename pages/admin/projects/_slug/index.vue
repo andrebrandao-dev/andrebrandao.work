@@ -6,7 +6,7 @@
 export default {
   name: 'page-admin-projects-slug',
   layout: 'admin',
-  middleware: ['check-auth', 'auth']
+  middleware: ['menu', 'check-auth', 'auth']
 }
 </script>
 

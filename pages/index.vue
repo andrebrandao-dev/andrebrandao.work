@@ -61,6 +61,7 @@ import ProjectList from '@/components/Application/ProjectList'
 
 export default {
   name: 'page-index',
+  middleware: ['menu'],
   components: {
     Gravatar,
     Section,

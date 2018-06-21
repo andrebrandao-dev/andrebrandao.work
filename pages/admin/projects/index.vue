@@ -25,7 +25,7 @@ import Section from '@/components/UI/Section'
 export default {
   name: 'page-admin-projects-index',
   layout: 'admin',
-  middleware: ['check-auth', 'auth'],
+  middleware: ['menu', 'check-auth', 'auth'],
   components: {
     Section
   },

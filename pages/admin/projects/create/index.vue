@@ -25,7 +25,7 @@ import FormProject from '@/components/Admin/FormProject'
 export default {
   name: 'page-admin-projects-create',
   layout: 'admin',
-  middleware: ['check-auth', 'auth'],
+  middleware: ['menu', 'check-auth', 'auth'],
   components: {
     Section,
     FormProject
