@@ -2,24 +2,7 @@
   <Section color="ligth" :sectionHeader="sectionProjectsHeader">
     <div slot="body" class="section-body">
       <div class="container">
-        <div class="columns projects">
-          <div class="col wow fadeInLeft" v-for="(project, index) in activedProjects">
-            <nuxt-link :to="`/projects/${ project.slug }`" :title="project.title">
-              <div class="card">
-                <div class="card-header cover" :style="{ backgroundImage: `url(${ project.thumbnail })` }">
-                  <span class="sr-only">{{ project.title }}</span>
-                </div>
-                <div class="card-body">
-                  <h3 class="card-body-title">{{ project.title }}</h3>
-                  <p class="card-body-text resumed">{{ project.content }}</p>
-                </div>
-                <div class="card-footer" :style="{ backgroundColor: project.color }">
-                  <span class="card-footer-item" v-for="tag in project.tags">{{ tag }}</span>
-                </div>
-              </div>
-            </nuxt-link>
-          </div>
-        </div>
+        <ProjectList :limit="10" />
       </div>
     </div>
   </Section>
@@ -30,11 +13,13 @@ import { mapGetters } from 'vuex'
 
 // Components
 import Section from '@/components/UI/Section'
+import ProjectList from '@/components/Application/ProjectList'
 
 export default {
   name: 'page-projects-index',
   components: {
-    Section
+    Section,
+    ProjectList
   },
   data () {
     return {

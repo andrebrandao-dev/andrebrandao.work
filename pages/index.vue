@@ -21,30 +21,13 @@
     <Section color="ligth" :sectionHeader="sectionProjectsHeader">
       <div slot="body" class="section-body">
         <div class="container">
-          <div class="columns projects">
-            <div class="col wow fadeInLeft" v-for="(project, index) in activedProjects" v-if="index < 3">
-              <nuxt-link :to="`/projects/${ project.slug }`" :title="project.title">
-                <div class="card">
-                  <div class="card-header cover" :style="{ backgroundImage: `url(${ project.thumbnail })` }">
-                    <span class="sr-only">{{ project.title }}</span>
-                  </div>
-                  <div class="card-body">
-                    <h3 class="card-body-title">{{ project.title }}</h3>
-                    <p class="card-body-text resumed">{{ project.content }}</p>
-                  </div>
-                  <div class="card-footer" :style="{ backgroundColor: project.color }">
-                    <span class="card-footer-item" v-for="tag in project.tags">{{ tag }}</span>
-                  </div>
-                </div>
-              </nuxt-link>
-            </div>
-          </div>
+          <ProjectList :limit="3" />
         </div>
       </div>
       <div slot="footer" class="section-footer">
         <div class="t-center">
           <nuxt-link class="btn btn-primary" exact to="/projects" title="More projects">
-            More projects
+            Todos Projetos
           </nuxt-link>
         </div>
       </div>
@@ -54,7 +37,14 @@
     <Section color="success" :sectionHeader="sectionArticlesHeader">
       <div slot="body" class="section-body">
         <div class="container">
-          <ArticleList :limit="6"/>
+          <ArticleList :limit="3" />
+        </div>
+      </div>
+      <div slot="footer" class="section-footer">
+        <div class="t-center">
+          <nuxt-link class="btn btn-ligth" exact to="/articles" title="Ver Todos No Medium">
+            Mais Artigos
+          </nuxt-link>
         </div>
       </div>
     </Section>
@@ -63,19 +53,19 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
-
 // Components
 import Gravatar from 'vue-gravatar'
 import Section from '@/components/UI/Section'
 import ArticleList from '@/components/Application/ArticleList'
+import ProjectList from '@/components/Application/ProjectList'
 
 export default {
   name: 'page-index',
   components: {
     Gravatar,
     Section,
-    ArticleList
+    ArticleList,
+    ProjectList
   },
   data () {
     return {
@@ -96,10 +86,6 @@ export default {
         email: 'andrebf4@gmail.com'
       }
     }
-  },
-
-  computed: {
-    ...mapGetters(['activedProjects'])
   },
 }
 </script>

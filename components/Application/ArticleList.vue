@@ -1,10 +1,13 @@
 <template>
   <div class="columns">
-    <div class="col" v-for="(article, index) in listedArticles" v-if="index + 1 <= limit">
-      <a :href="article.link" :title="article.title">
+    <div class="col wow fadeInLeft" v-for="(article, index) in listedArticles" v-if="index + 1 <= limit">
+      <a :href="article.link" :title="article.title" target="_blank">
         <div class="card">
+          <div class="card-header cover" :style="{ backgroundImage: `url(${ getImage(article['content:encoded']) })` }">
+            <span class="sr-only">{{ article.title }}</span>
+          </div>
           <div class="card-body">
-            <h3 class="card-body-title">{{ article.title }}</h3>
+            <h3 class="card-body-title t-overflow">{{ article.title }}</h3>
             <p class="card-body-text">{{ article.pubDate | formatDate }}</p>
           </div>
         </div>
@@ -17,7 +20,6 @@
 import { mapGetters } from 'vuex'
 
 // Components
-import Gravatar from 'vue-gravatar'
 import Section from '@/components/UI/Section'
 
 export default {
@@ -31,8 +33,10 @@ export default {
   computed: {
     ...mapGetters(['listedArticles'])
   },
-  mounted () {
-    console.log(this.listedArticles)
+  methods: {
+    getImage (text) {
+      return text.split('" />').shift().split('src="').pop()
+    }
   }
 }
 </script>
@@ -40,4 +44,9 @@ export default {
 <style scoped lang="stylus">
   .col
     width 33.333%
+    @media (max-width 767px)
+      width 100%
+
+  .tags
+    margin-top 25px
 </style>
