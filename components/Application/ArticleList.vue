@@ -46,7 +46,4 @@ export default {
     width 33.333%
     @media (max-width 767px)
       width 100%
-
-  .tags
-    margin-top 25px
 </style>

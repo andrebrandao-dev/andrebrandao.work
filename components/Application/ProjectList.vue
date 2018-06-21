@@ -45,4 +45,8 @@ export default {
     width 33.333%
     @media (max-width 767px)
       width 100%
+
+  .card
+    margin-bottom 25px
+
 </style>
