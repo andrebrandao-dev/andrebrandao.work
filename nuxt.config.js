@@ -40,7 +40,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    // '~/plugins/vue-notifications'
+    '~/plugins/filters.js',
   ],
 
   /*
@@ -64,7 +64,7 @@ module.exports = {
     */
     extend(config, ctx) {
 
-    }
+    },
   },
 
   env: {

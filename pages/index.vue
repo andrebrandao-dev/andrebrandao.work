@@ -54,7 +54,7 @@
     <Section color="success" :sectionHeader="sectionArticlesHeader">
       <div slot="body" class="section-body">
         <div class="container">
-
+          <ArticleList :limit="6"/>
         </div>
       </div>
     </Section>
@@ -68,14 +68,16 @@ import { mapActions, mapGetters } from 'vuex'
 // Components
 import Gravatar from 'vue-gravatar'
 import Section from '@/components/UI/Section'
+import ArticleList from '@/components/Application/ArticleList'
 
 export default {
   name: 'page-index',
   components: {
     Gravatar,
-    Section
+    Section,
+    ArticleList
   },
-  data() {
+  data () {
     return {
       sectionProjectsHeader: {
         title: 'Projects',
@@ -99,7 +101,6 @@ export default {
   computed: {
     ...mapGetters(['activedProjects'])
   },
-
 }
 </script>
 
