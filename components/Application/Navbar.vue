@@ -37,6 +37,12 @@
           <span class="sr-only">Github</span>
         </a>
       </li>
+      <li class="app-nav-item" v-if="isAuthenticated">
+        <nuxt-link class="app-nav-link github" to="/admin" title="admin">
+          <i class="ion ion-md-apps f-1-5"></i>
+          <span class="sr-only">Admin</span>
+        </nuxt-link>
+      </li>
     </ul>
   </nav>
 </template>
@@ -47,7 +53,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'component-application-header',
   computed: {
-    ...mapGetters(['menuIsClosed'])
+    ...mapGetters(['menuIsClosed', 'isAuthenticated'])
   },
   methods: {
     ...mapActions(['toggleMenu'])

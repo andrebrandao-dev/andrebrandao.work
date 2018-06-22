@@ -31,7 +31,7 @@ import Section from '@/components/UI/Section'
 
 export default {
   name: 'page-projects-index',
-  middleware: ['menu'],
+  middleware: ['menu', 'check-auth'],
   components: {
     Section
   },

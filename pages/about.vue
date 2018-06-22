@@ -15,7 +15,7 @@
 <script>
 export default {
   name: 'page-about',
-  middleware: ['menu'],
+  middleware: ['menu', 'check-auth'],
 }
 </script>
 

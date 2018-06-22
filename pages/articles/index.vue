@@ -21,7 +21,7 @@ import ArticleList from '@/components/Application/ArticleList'
 
 export default {
   name: 'page-articles-index',
-  middleware: ['menu'],
+  middleware: ['menu', 'check-auth'],
   components: {
     Section,
     ArticleList
