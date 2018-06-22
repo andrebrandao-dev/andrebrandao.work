@@ -1,10 +1,13 @@
 <template>
   <div>
+    <div>
+      <notifications group="form-feedback"></notifications>
+    </div>
     <Loading v-if="isLoading" message="Sending message"/>
     <Section color="ligth" :sectionHeader="sectionHeader">
       <div slot="body" class="section-body">
         <div class="container">
-          <FormContact />
+          <FormContact @submitForm="onSubmit" />
         </div>
       </div>
     </Section>
@@ -30,7 +33,7 @@ export default {
   data() {
     return {
       sectionHeader: {
-        title: 'Contact',
+        title: 'Contato',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         animation: 'fadeInRight',
         icon: 'ion-md-mail'
@@ -39,6 +42,16 @@ export default {
   },
   computed: {
     ...mapGetters(['isLoading'])
+  },
+  methods: {
+    onSubmit(success) {
+      this.$notify({
+        group: 'form-feedback',
+        type: success ? 'success' : 'warn',
+        title: success ? 'Mensagem enviada' : 'Mensagem não enviada',
+        text: success ? 'Obrigado pelo contato, logo retornarei' : 'Tente mais tarde'
+      });
+    }
   }
 }
 </script>

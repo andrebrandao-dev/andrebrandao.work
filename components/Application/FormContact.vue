@@ -1,20 +1,23 @@
 <template lang="html">
-  <form class="form" @submit.prevent="submitForm">
-    <div class="card wow fadeInLeft">
-      <div class="card-body">
-        <div class="form-body">
-          <Input label="Name" v-model="form.name" icon="ion-md-person" />
-          <Input label="Email" v-model="form.email" icon="ion-md-mail" />
-          <Input label="Message" controlType="textarea" v-model="form.message" icon="ion-md-text" />
-          <Button class="btn btn-primary" type="submit" title="Submit">Submit</Button>
+  <div>
+    <form class="form" @submit.prevent="submitForm">
+      <div class="card wow fadeInLeft">
+        <div class="card-body">
+          <div class="form-body">
+            <Input label="Name" v-model="form.name" icon="ion-md-person" />
+            <Input label="Email" v-model="form.email" icon="ion-md-mail" />
+            <Input label="Message" controlType="textarea" v-model="form.message" icon="ion-md-text" />
+            <Button class="btn btn-primary" type="submit" title="Submit">Submit</Button>
+          </div>
         </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import axios from 'axios'
+import moment from 'moment'
 
 // Components
 import Input from '@/components/UI/Input'
@@ -29,15 +32,24 @@ export default {
   data () {
     return {
       form: {
-        name: '', email: '', message: ''
+        name: '', email: '', message: '', created_at: '', read: false
       }
     }
   },
   methods: {
-    ...mapActions(['saveProject']),
-
     submitForm() {
-      this.sendMessage(this.form)
+      this.form.created_at = new Date()
+      this.$store.dispatch('setLoading', true)
+
+      axios.post(`${ process.env.baseUrl }/messages.json`, this.form)
+        .then(data => {
+          this.$store.dispatch('setLoading', false)
+          this.$emit('submitForm', true)
+        })
+        .catch(e => {
+          this.$store.dispatch('setLoading', false)
+          this.$emit('submitForm', false)
+        })
     }
   }
 }

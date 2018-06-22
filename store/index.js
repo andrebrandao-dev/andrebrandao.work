@@ -4,7 +4,6 @@ import axios from 'axios'
 
 // Modules
 import moduleGeneral from './general'
-import moduleMessages from './messages'
 import moduleProjects from './projects'
 import moduleArticles from './articles'
 import moduleAuth from './auth'
@@ -13,7 +12,6 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       ...moduleGeneral.state,
-      ...moduleMessages.state,
       ...moduleProjects.state,
       ...moduleArticles.state,
       ...moduleAuth.state
@@ -21,7 +19,6 @@ const createStore = () => {
 
     mutations: {
       ...moduleGeneral.mutations,
-      ...moduleMessages.mutations,
       ...moduleProjects.mutations,
       ...moduleArticles.mutations,
       ...moduleAuth.mutations
@@ -59,7 +56,6 @@ const createStore = () => {
 
       },
       ...moduleGeneral.actions,
-      ...moduleMessages.actions,
       ...moduleProjects.actions,
       ...moduleArticles.actions,
       ...moduleAuth.actions
@@ -67,7 +63,6 @@ const createStore = () => {
 
     getters: {
       ...moduleGeneral.getters,
-      ...moduleMessages.getters,
       ...moduleProjects.getters,
       ...moduleArticles.getters,
       ...moduleAuth.getters

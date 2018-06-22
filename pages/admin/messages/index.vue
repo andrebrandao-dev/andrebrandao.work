@@ -1,19 +1,38 @@
 <template>
-  <Section color="danger" :sectionHeader="sectionHeader">
+  <Section color="success" :sectionHeader="sectionHeader">
     <div slot="body" class="section-body">
       <div class="container">
-        <div class="columns">
-          <div class="col" v-for="message in submittedMessages">
-            <div class="card wow fadeInRight">
-              <div class="card-header flex flex-align-center">
-                <Gravatar class="avatar avatar-ligth" :email="message.email"/>
-              </div>
-              <div class="card-body">
-                <h3 class="card-body-title">{{ message.name }}</h3>
-                <p class="card-body-text">{{ message.email }}</p>
-              </div>
-            </div>
-          </div>
+        <div class="t-center" v-if="!messages.length">
+          <p class="t-primary">Nenhuma mensagem</p>
+        </div>
+
+        <div class="table-responsive" v-if="messages.length">
+          <table class="table">
+            <thead class="table-header">
+              <tr>
+                <th>Enviado em:</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Ler</th>
+              </tr>
+            </thead>
+            <tbody class="table-body">
+              <tr v-for="(message, index) in messages">
+                <td>{{ message.created_at | formatDate }}</td>
+                <td>{{ message.name }}</td>
+                <td>{{ message.email }}</td>
+                <td>{{ message.read ? 'Lida' : 'Nova' }}</td>
+
+                <td class="has-button">
+                  <nuxt-link class="tag tag-success" :to="`/admin/messages/${ message.id }`" :name="`Remover ${ message.title }`">
+                    <i class="ion ion-md-create"></i>
+                    <span class="sr-only">Editar</span>
+                  </nuxt-link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -21,6 +40,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { mapActions, mapGetters } from 'vuex'
 
 // Components
@@ -35,41 +55,44 @@ export default {
     Gravatar,
     Section
   },
+  asyncData (context) {
+    return axios.get(`${ process.env.baseUrl }/messages.json?auth=${ context.store.state.token }`)
+      .then(response => {
+        const messages = []
+        for (const key in response.data) {
+          messages.push({
+            id: key,
+            ...response.data[key]
+          })
+        }
+        return { messages: messages }
+      })
+      .catch(e => {
+        console.log(e)
+      })
+  },
   data () {
     return {
       sectionHeader: {
-        title: 'Messages',
+        title: 'Mensagens',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         animation: 'fadeInRight',
         icon: 'ion-md-text'
       }
     }
   },
-  mounted () {
-    this.getMessages()
-  },
-  computed: {
-    ...mapGetters(['submittedMessages'])
-  },
-  methods: {
-    ...mapActions(['getMessages'])
-  }
 }
 </script>
 
 <style scoped lang="stylus">
-.col
-  width 25%
 
-  @media(max-width 992px)
-    width 50%
+.table-responsive,
+.t-primary
+  margin-top 50px
 
-  @media(max-width 767px)
-    width 100%
-
-.card
-  &-header
-    height 100px
+.t-primary
+  font-weight 300
+  font-size 2rem
 
 .avatar
   margin 25px auto 0 auto
