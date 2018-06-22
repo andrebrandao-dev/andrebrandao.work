@@ -67,7 +67,7 @@
 
 <script>
 import axios from 'axios'
-import { findIndex } from 'lodash'
+import { findIndex, orderBy } from 'lodash'
 import { mapActions, mapGetters } from 'vuex'
 
 // Components
@@ -92,7 +92,8 @@ export default {
             ...response.data[key]
           })
         }
-        return { messages: messages }
+
+        return { messages: orderBy(messages, ['created_at'], ['desc']) }
       })
       .catch(e => {
         console.log(e)

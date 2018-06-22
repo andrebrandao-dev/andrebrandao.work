@@ -45,6 +45,7 @@ export default {
         .then(data => {
           this.$store.dispatch('setLoading', false)
           this.$emit('submitForm', true)
+          this.form = { name: '', email: '', message: '', created_at: '', read: false }
         })
         .catch(e => {
           this.$store.dispatch('setLoading', false)
