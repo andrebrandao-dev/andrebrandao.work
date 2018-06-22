@@ -1,4 +1,5 @@
 import axios from 'axios'
+import * as _ from 'lodash'
 
 export const sendProject = (vuexContext, message) => {
 
@@ -26,4 +27,10 @@ export const getProjects = (vuexContext) => {
     .catch(e => {
       console.log(e)
     })
+}
+
+export const deleteProject = (vuexContext, id) => {
+  const index = _.findIndex(vuexContext.state.projects, project => project.id === id)
+  // vuexContext.commit('deleteProject', index)
+
 }

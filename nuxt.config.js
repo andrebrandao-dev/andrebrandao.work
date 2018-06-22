@@ -40,7 +40,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/filters.js',
+    '~/plugins/filters.js'
   ],
 
   /*
@@ -48,6 +48,7 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/axios',
+    // '@nuxtjs/firebase'
   ],
 
   axios: {

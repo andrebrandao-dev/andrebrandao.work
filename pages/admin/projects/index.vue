@@ -4,12 +4,16 @@
       <div class="container">
 
         <div class="t-center">
-          <nuxt-link to="/admin/projects/create" class="btn btn-primary" title="New project">
-            <i class="ion ion-md-add"></i>New Project
+          <nuxt-link to="/admin/projects/create" class="btn btn-primary" title="Novo Projeto">
+            Novo Projeto
           </nuxt-link>
         </div>
 
-        <div class="table-responsive">
+        <div class="t-center" v-if="!activedProjects.length">
+          <p class="t-primary">Nenhum projeto cadastrado ainda</p>
+        </div>
+
+        <div class="table-responsive" v-if="activedProjects.length">
           <table class="table">
             <thead class="table-header">
               <tr>
@@ -36,7 +40,7 @@
                   </nuxt-link>
                 </td>
                 <td class="has-button">
-                  <span type="button" class="tag tag-danger" :name="`Remover ${ project.title }`" @click="remove(project.id)">
+                  <span type="button" class="tag tag-danger" :name="`Remover ${ project.title }`" @click="onRemove(project.id)">
                     <i class="ion ion-md-trash"></i>
                     <span class="sr-only">Remover</span>
                   </span>
@@ -52,7 +56,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 // Components
 import Section from '@/components/UI/Section'
@@ -66,8 +70,6 @@ export default {
   },
   data () {
     return {
-      sortKey: '#',
-      reverse: false,
       sectionHeader: {
         title: 'Projetos',
         subtitle: 'Lista de projetos adicionados, é possível adicionar, editar e remove-los',
@@ -83,19 +85,25 @@ export default {
     console.log(this.activedProjects);
   },
   methods: {
-    sortBy (sortKey) {
-      console.log(sortKey);
-      this.reverse = (this.sortKey == sortKey) ? ! this.reverse : false;
+    ...mapActions(['deleteProject']),
 
-      this.sortKey = sortKey;
-    },
+    onRemove(id) {
+      console.log(this.$firebaseRefs)
+      this.deleteProject(id)
+    }
+
   }
 }
 </script>
 
 <style scoped lang="stylus">
-  .table-responsive
+  .table-responsive,
+  .t-primary
     margin-top 50px
+
+  .t-primary
+    font-weight 300
+    font-size 2rem
 
   .tag
     i
