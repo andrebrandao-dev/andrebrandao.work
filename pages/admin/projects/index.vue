@@ -9,15 +9,50 @@
           </nuxt-link>
         </div>
 
-        <div class="columns">
-
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="table-header">
+              <tr>
+                <th>#</th>
+                <th>Atalho</th>
+                <th>Nome</th>
+                <th>Empresa</th>
+                <th>Color</th>
+                <th>Editar</th>
+                <th>Remover</th>
+              </tr>
+            </thead>
+            <tbody class="table-body">
+              <tr v-for="(project, index) in activedProjects">
+                <td>{{ project.id }}</td>
+                <td>{{ project.slug }}</td>
+                <td>{{ project.title }}</td>
+                <td>{{ project.company }}</td>
+                <td>{{ project.color }}</td>
+                <td class="has-button">
+                  <nuxt-link class="tag tag-success" :to="`/admin/projects/${ project.id }`" :name="`Remover ${ project.title }`">
+                    <i class="ion ion-md-create"></i>
+                    <span class="sr-only">Editar</span>
+                  </nuxt-link>
+                </td>
+                <td class="has-button">
+                  <span type="button" class="tag tag-danger" :name="`Remover ${ project.title }`" @click="remove(project.id)">
+                    <i class="ion ion-md-trash"></i>
+                    <span class="sr-only">Remover</span>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+
       </div>
     </div>
   </Section>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 // Components
 import Section from '@/components/UI/Section'
@@ -31,16 +66,38 @@ export default {
   },
   data () {
     return {
+      sortKey: '#',
+      reverse: false,
       sectionHeader: {
-        title: 'Projects',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        title: 'Projetos',
+        subtitle: 'Lista de projetos adicionados, é possível adicionar, editar e remove-los',
         animation: 'fadeInLeft',
         icon: 'ion-md-code-working'
       }
     }
+  },
+  computed: {
+    ...mapGetters(['activedProjects'])
+  },
+  mounted () {
+    console.log(this.activedProjects);
+  },
+  methods: {
+    sortBy (sortKey) {
+      console.log(sortKey);
+      this.reverse = (this.sortKey == sortKey) ? ! this.reverse : false;
+
+      this.sortKey = sortKey;
+    },
   }
 }
 </script>
 
 <style scoped lang="stylus">
+  .table-responsive
+    margin-top 50px
+
+  .tag
+    i
+      margin 0
 </style>
