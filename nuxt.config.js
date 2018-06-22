@@ -40,7 +40,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/filters.js'
+    '~/plugins/filters.js',
+    { src: '~/plugins/vue-notifications.js', ssr: false }
   ],
 
   /*
@@ -63,6 +64,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    target: 'node',
     extend(config, ctx) {
 
     },

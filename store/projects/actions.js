@@ -31,6 +31,5 @@ export const getProjects = (vuexContext) => {
 
 export const deleteProject = (vuexContext, id) => {
   const index = _.findIndex(vuexContext.state.projects, project => project.id === id)
-  // vuexContext.commit('deleteProject', index)
-
+  vuexContext.commit('deleteProject', index)
 }
