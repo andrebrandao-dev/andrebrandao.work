@@ -32,7 +32,9 @@
                 <td>{{ project.slug }}</td>
                 <td>{{ project.title }}</td>
                 <td>{{ project.company }}</td>
-                <td>{{ project.color }}</td>
+                <td class="has-button">
+                  <span class="tag" :style="{ backgroundColor: project.color }">{{ project.color }}</span>
+                </td>
                 <td class="has-button">
                   <nuxt-link class="tag tag-success" :to="`/admin/projects/${ project.id }`" :name="`Remover ${ project.title }`">
                     <i class="ion ion-md-create"></i>

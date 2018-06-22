@@ -9,7 +9,7 @@
           </nuxt-link>
         </div>
 
-        <FormProject :project="project" />
+        <FormProject :project="project" :isNew="false" />
 
       </div>
     </div>
@@ -17,15 +17,25 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 // Components
 import Section from '@/components/UI/Section'
 import FormProject from '@/components/Admin/FormProject'
 
 export default {
-  name: 'page-admin-projects-create',
+  name: 'page-admin-projects-id',
   layout: 'admin',
   middleware: ['menu', 'check-auth', 'auth'],
+  asyncData ({ params }) {
+    return axios.get(`${ process.env.baseUrl }/projects/${ params.id }.json`)
+        .then(res => {
+          return { project: res.data }
+        })
+        .catch(err => {
+          console.log(err)
+        })
+  },
   components: {
     Section,
     FormProject
@@ -33,21 +43,15 @@ export default {
   data () {
     return {
       sectionHeader: {
-        title: 'New Project',
+        title: 'Editando',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         animation: 'fadeInDown',
         icon: 'ion-md-code-working'
-      },
-      project: {
-        title: '', slug: '', company: '',
-        thumbnail: '', color: '#',
-        tags: [],
-        access: {
-          web: '', android: '', ios: ''
-        },
-        content: ''
       }
     }
+  },
+  mounted () {
+    console.log(this.project)
   }
 }
 </script>

@@ -47,7 +47,9 @@
             </div>
 
             <div class="col">
-              <Button class="btn btn-primary" type="submit" title="Submit">Save</Button>
+              <Button class="btn btn-primary" type="submit" title="Adicionar">
+                {{ isNew ? 'Adicionar' : 'Atualizar' }}
+              </Button>
             </div>
           </div>
         </div>
@@ -71,18 +73,19 @@ export default {
     Input,
     Button
   },
+  props: {
+    project: {
+      type: Object,
+      required: true
+    },
+    isNew: {
+      type: Boolean,
+      default: true
+    }
+  },
   data () {
     return {
-      tag: '',
-      project: {
-        title: '', slug: '', company: '',
-        thumbnail: '', color: '#',
-        tags: [],
-        access: {
-          web: '', android: '', ios: ''
-        },
-        content: ''
-      }
+      tag: ''
     }
   },
   mounted () {
