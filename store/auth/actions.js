@@ -10,12 +10,11 @@ export const authenticateUser = (vuexContext, form) => {
     returnSecureToken: true
   })
   .then(result => {
-
-    vuexContext.commit('setToken', result.idToken)
-    localStorage.setItem('token', result.idToken)
-    localStorage.setItem('tokenExpiration', new Date().getTime() + Number.parseInt(result.expiresIn) * 1000)
-    Cookie.set('jwt', result.idToken)
-    Cookie.set('expirationDate', new Date().getTime() + Number.parseInt(result.expiresIn) * 1000)
+    vuexContext.commit('setToken', result.data.idToken)
+    localStorage.setItem('token', result.data.idToken)
+    localStorage.setItem('tokenExpiration', new Date().getTime() + Number.parseInt(result.data.expiresIn) * 1000)
+    Cookie.set('jwt', result.data.idToken)
+    Cookie.set('expirationDate', new Date().getTime() + Number.parseInt(result.data.expiresIn) * 1000)
 
   })
   .catch(e => {

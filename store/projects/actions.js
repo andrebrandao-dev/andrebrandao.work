@@ -3,7 +3,7 @@ import * as _ from 'lodash'
 
 export const sendProject = (vuexContext, message) => {
 
-  axios.post(`${ process.env.baseUrl }/projects.json`, message)
+  axios.post(`${ process.env.baseUrl }/projects.json?auth=${ vuexContext.state.token }`, message)
     .then(data => {
       console.log('projeto enviado')
     })
