@@ -1,11 +1,11 @@
 import axios from 'axios'
 import * as _ from 'lodash'
 
-export const sendProject = (vuexContext, message) => {
+export const sendProject = (vuexContext, project) => {
 
-  axios.post(`${ process.env.baseUrl }/projects.json?auth=${ vuexContext.state.token }`, message)
+  axios.post(`${ process.env.baseUrl }/projects.json?auth=${ vuexContext.state.token }`, project)
     .then(data => {
-      console.log('projeto enviado')
+      vuexContext.dispatch('getProjects')
     })
     .catch(e => {
       console.log(e)
@@ -29,7 +29,12 @@ export const getProjects = (vuexContext) => {
     })
 }
 
-export const deleteProject = (vuexContext, id) => {
-  const index = _.findIndex(vuexContext.state.projects, project => project.id === id)
-  vuexContext.commit('deleteProject', index)
+export const updateProject = (vuexContext, project) => {
+  axios.put(`${ process.env.baseUrl }/projects/${ project.id }.json?auth=${ vuexContext.state.token }`, project)
+    .then(data => {
+      vuexContext.dispatch('getProjects')
+    })
+    .catch(e => {
+      console.log(e)
+    })
 }

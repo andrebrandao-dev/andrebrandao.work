@@ -91,11 +91,23 @@ export default {
   mounted () {
   },
   methods: {
-    ...mapActions(['sendProject']),
+    ...mapActions(['sendProject', 'updateProject']),
 
     submitForm () {
       this.project.slug = slug(this.project.title).toLowerCase()
-      this.sendProject(this.project)
+
+      if (this.isNew) {
+        this.sendProject(this.project)
+          .then(() => {
+            this.$router.push('/admin/projects')
+          })
+      } else {
+        this.project.id = this.$route.params.id
+        this.updateProject(this.project)
+          .then(() => {
+            this.$router.push('/admin/projects')
+          })
+      }
     },
 
     removeTag(index) {
