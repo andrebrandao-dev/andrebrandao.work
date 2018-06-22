@@ -26,7 +26,7 @@
       </div>
       <div slot="footer" class="section-footer">
         <div class="t-center">
-          <nuxt-link class="btn btn-primary" exact to="/projects" title="More projects">
+          <nuxt-link class="btn btn-success" exact to="/projects" title="More projects">
             Todos Projetos
           </nuxt-link>
         </div>
