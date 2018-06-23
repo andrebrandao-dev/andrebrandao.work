@@ -53,6 +53,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 // Components
 import Gravatar from 'vue-gravatar'
 import Section from '@/components/UI/Section'
@@ -68,7 +70,16 @@ export default {
     ArticleList,
     ProjectList
   },
-  data () {
+  ansyncData(context) {
+    return axios.get(`${ process.env.baseUrl }/pageViews.json`)
+      .then(response => {
+        console.log(response)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  },
+  data() {
     return {
       sectionProjectsHeader: {
         title: 'Projects',
