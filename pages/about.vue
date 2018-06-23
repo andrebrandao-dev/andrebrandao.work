@@ -1,23 +1,62 @@
 <template>
-  <section class="section bg-ligth">
-    <header class="section-header wow fadeInRight">
-      <i class="icon-circled icon-circled-primary ion ion-md-person"></i>
-      <h1 class="section-header-title">Sobre</h1>
-    </header>
-    <div class="section-body">
+  <Section color="ligth" :sectionHeader="sectionHeader">
+    <div slot="body" class="section-body">
       <div class="container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="swiper-container" ref="swiperAbout">
+          <div class="swiper-wrapper">
+            <!-- Professional -->
+            <div class="swiper-slide">
+              Profissional
+            </div>
+            <!-- Personal -->
+            <div class="swiper-slide">
+              Pessoal
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination" ref="swiperAboutPagination"></div>
       </div>
     </div>
-  </section>
+  </Section>
 </template>
 
 <script>
+import Swiper from 'swiper'
+
+// Components
+import Section from '@/components/UI/Section'
+
 export default {
   name: 'page-about',
   middleware: ['menu', 'check-auth'],
+  components: {
+    Section
+  },
+  data() {
+    return {
+      swiperAbout: null,
+      sectionHeader: {
+        title: 'Sobre',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        animation: 'fadeInRight',
+        icon: 'ion-md-person'
+      }
+    }
+  },
+  mounted() {
+    this.initSwiper()
+  },
+  methods: {
+    initSwiper() {
+      this.swiperAbout = new Swiper(this.$refs.swiperAbout, {
+        slidePerView: 1,
+        pagination: {
+          el: this.$refs.swiperAboutPagination,
+          type: 'bullets',
+          clickable: true
+        }
+      })
+    }
+  }
 }
 </script>
-
-<style scoped>
-</style>
