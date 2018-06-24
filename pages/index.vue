@@ -53,8 +53,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 // Components
 import Gravatar from 'vue-gravatar'
 import Section from '@/components/UI/Section'
@@ -69,15 +67,6 @@ export default {
     Section,
     ArticleList,
     ProjectList
-  },
-  ansyncData(context) {
-    return axios.get(`${ process.env.baseUrl }/pageViews.json`)
-      .then(response => {
-        console.log(response)
-      })
-      .catch(err => {
-        console.log(err)
-      })
   },
   data() {
     return {
@@ -99,6 +88,23 @@ export default {
       }
     }
   },
+  mounted() {
+    this.viewCont()
+  },
+  methods: {
+    viewCont() {
+      return this.$axios.get(`${ process.env.baseUrl }/pageViews.json`)
+        .then(response => {
+          const data = response.data
+          data.home++
+
+          this.$axios.put(`${ process.env.baseUrl }/pageViews.json`, data)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+  }
 }
 </script>
 

@@ -45,6 +45,7 @@ export default {
   },
   mounted() {
     this.initSwiper()
+    this.viewCont()
   },
   methods: {
     initSwiper() {
@@ -56,6 +57,18 @@ export default {
           clickable: true
         }
       })
+    },
+    viewCont() {
+      return this.$axios.get(`${ process.env.baseUrl }/pageViews.json`)
+        .then(response => {
+          const data = response.data
+          data.about++
+
+          this.$axios.put(`${ process.env.baseUrl }/pageViews.json`, data)
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 }

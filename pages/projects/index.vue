@@ -34,6 +34,23 @@ export default {
   },
   computed: {
     ...mapGetters(['activedProjects'])
+  },
+  mounted() {
+    this.viewCont()
+  },
+  methods: {
+    viewCont() {
+      return this.$axios.get(`${ process.env.baseUrl }/pageViews.json`)
+        .then(response => {
+          const data = response.data
+          data.projects++
+
+          this.$axios.put(`${ process.env.baseUrl }/pageViews.json`, data)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
   }
 }
 </script>
