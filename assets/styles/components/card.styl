@@ -6,10 +6,10 @@ $radiusCard = 10px
   display block
   border-radius $radiusCard
   position relative
-  text-align center
   box-shadow -1px 15px 30px -12px rgba(0, 0, 0, .2)
   margin 0 auto
   transition all .3s
+  text-align center
 
   &:hover
     box-shadow -1px 15px 30px -12px rgba(0, 0, 0, .3)
@@ -20,24 +20,19 @@ $radiusCard = 10px
     border-radius $radiusCard $radiusCard 0 0
     margin 0
     position relative
+
+    & + .card-body
+      margin-top 25px
+
     &.cover
       cover()
 
-    // &:before
-    //   position absolute
-    //   content ''
-    //   top 5px
-    //   left 5px
-    //   right 5px
-    //   border 2px solid $primary
-    //   height 140px
-    //   border-radius $radiusCard
-    //   opacity .05
-
   // Card Body
   &-body
-    margin 25px 0
     padding 10px
+
+    & + .card-footer
+        margin-top 25px
 
     &-title
       color $primary

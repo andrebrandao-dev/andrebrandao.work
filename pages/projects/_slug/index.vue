@@ -9,11 +9,25 @@
     <Section :color="notFound ? 'warning' : 'ligth'" :sectionHeader="sectionProjectsHeader" v-if="project || notFound">
       <div slot="body" class="section-body">
         <div class="container">
-          <div class="card" v-if="!notFound">
-            <div class="card-body">
-              <p class="card-body-text">{{ project.content }}</p>
+          <!-- Project Found -->
+          <div v-if="!notFound">
+
+            <div class="project-cover" :style="{ backgroundImage: `url(${ project.thumbnail })` }">
+              <span class="sr-only">{{ project.title }}</span>
             </div>
+
+            <div class="project-tags">
+              <span class="tag tag-primary" v-for="tag in project.tags">{{ tag }}</span>
+            </div>
+
+            <div class="card">
+              <div class="card-body t-left">
+                <p class="card-body-text">{{ project.content }}</p>
+              </div>
+            </div>
+
           </div>
+
           <!-- Project Not Found -->
           <div class="t-center" v-if="notFound">
             <nuxt-link class="btn btn-primary" exact to="/" title="Página inicial">
@@ -29,7 +43,6 @@
               <h3 class="form-contact-title">Entre em contato!</h3>
               <FormContact @submitForm="onSubmit" />
             </div>
-
           </div>
         </div>
       </div>
