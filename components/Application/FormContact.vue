@@ -44,7 +44,7 @@
 <script>
 import axios from 'axios'
 import moment from 'moment'
-import { isEmailValid } from 'is-email-valid'; // Please be aware of the alias `isEmail`
+// import { isEmailValid } from 'is-email-valid'
 
 
 // Components
@@ -81,7 +81,7 @@ export default {
       }
 
       if (type === 'email') {
-        if (this.form.email === '' || !isEmailValid(this.form.email)) {
+        if (this.form.email === '') {
           this.emailError = true
           return
         }
