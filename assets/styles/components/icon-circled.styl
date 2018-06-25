@@ -1,0 +1,64 @@
+.icon-circled
+  display flex
+  font-size 1.5rem
+  width 50px
+  height 50px
+  align-items center
+  justify-content center
+  margin 0 auto
+  border-radius 50%
+  position relative
+
+  &:after
+    position absolute
+    content ''
+    width 44px
+    height 44px
+    top calc(50% - 22px)
+    left calc(50% - 22px)
+    border 2px solid
+    border-radius 50%
+    background-color transparent
+    z-index 0
+
+  &-primary
+    background-color $primary
+    color $ligth
+    &:after
+      border-color $ligth
+
+  &-secondary
+    background-color $secondary
+    color $ligth
+    &:after
+      border-color $ligth
+
+  &-ligth
+    background-color $ligth
+    color $primary
+    &:after
+      border-color $primary
+
+  &-success
+    background-color $success
+    color $ligth
+    &:after
+      border-color $ligth
+
+  &-warning
+    background-color $warning
+    color $ligth
+    &:after
+      border-color $ligth
+
+  &-danger
+    background-color $danger
+    color $ligth
+    &:after
+      border-color $ligth
+
+  &-info
+    background-color $info
+    color $ligth
+    &:after
+      border-color $ligth

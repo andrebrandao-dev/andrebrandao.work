@@ -1,0 +1,64 @@
+.modal
+  position fixed
+  top 0
+  left 0
+  bottom 0
+  right 0
+  z-index 200
+  height 100vh
+  width 100vw
+  padding 0 25px
+
+  // Modal Backdrop
+  &-bd
+    position absolute
+    top 0
+    left 0
+    bottom 0
+    right 0
+    background-color rgba($primary, .9)
+    z-index 1
+
+  // Modal Container
+  &-container
+    max-width 767px
+    margin 25px auto
+    position relative
+    z-index 10
+    background white
+    display block
+    border-radius 10px
+    position relative
+    box-shadow -1px 15px 30px -12px rgba(0, 0, 0, .3)
+    padding 25px
+
+  // Modal Header
+  &-header
+    text-align center
+    position relative
+    padding 25px 0
+
+    &-title
+      color $primary
+      font-size 2rem
+      font-weight 300
+
+    .icon-circled
+      position absolute
+      top 0
+      right 0
+      border none
+      cursor pointer
+      &:focus
+        outline none
+
+  // Modal Body
+  &-body
+    width 100%
+
+  // Modal Footer
+  &-footer
+    text-align center
+
+    .btn + .btn
+      margin-left 10px

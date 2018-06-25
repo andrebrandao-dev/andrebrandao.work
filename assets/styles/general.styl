@@ -1,4 +1,5 @@
 @import 'variables/**/*.styl'
+@import 'helpers/**/*.styl'
 @import 'components/**/*.styl'
 
 *, *:before, *:after
@@ -16,10 +17,41 @@ body
   height auto
   overflow-x hidden
   overflow-y auto
+  color $primary
+
+button
+  font-family 'Fira Sans', sans-serif
+
+a
+  text-decoration none
 
 .first-container
-  padding-top 300px
+  padding-top 80px
+  padding-bottom 0
+  position relative
 
 ::selection
   background-color $primary
   color $ligth
+
+.sr-only
+  border 0
+  clip rect(0, 0, 0, 0)
+  height 1px
+  margin -1px
+  overflow hidden
+  padding 0
+  position absolute
+  width 1px
+
+.pointer
+  cursor pointer
+
+.img-fluid
+  max-width 100%
+  height auto
+
+hr
+  border 0
+  height 1px
+  background-image linear-gradient(to right, rgba($primary, 0), rgba($primary, 0.75), rgba($primary, 0))

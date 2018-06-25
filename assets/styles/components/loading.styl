@@ -1,0 +1,38 @@
+.loading
+  position fixed
+  top 0
+  left 0
+  bottom 0
+  right 0
+  z-index 9999
+  width 100%
+  height 100%
+  display flex
+  align-items center
+  justify-content center
+
+  &:before
+    position absolute
+    content ''
+    top 0
+    left 0
+    bottom 0
+    right 0
+    z-index 0
+    background-color #FFF
+    opacity .8
+    width 100%
+    height 100%
+
+  &-message
+    width 100%
+    font-size 2rem
+    color $primary
+    z-index 10
+    position absolute
+    height 50px
+    display flex
+    justify-content center
+    top calc(50% + 50px)
+    font-weight 500
+    text-transform uppercase

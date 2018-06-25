@@ -1,11 +1,14 @@
 .btn
   padding .750rem 1.750rem
   display inline-block
-  border-radius 0px
-  border 1px solid transparent
+  border-radius 50px
+  border 2px solid transparent
   cursor pointer
   box-shadow none
   transition all .3s
+  text-decoration none
+  text-transform uppercase
+  font-size .9rem
 
   &-primary
     background-color $primary
@@ -49,3 +52,7 @@
   &:focus,
   &:active
     outline none
+
+  &:disabled
+    opacity .8
+    cursor not-allowed

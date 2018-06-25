@@ -1,0 +1,83 @@
+$radiusCard = 10px
+
+.card
+  background white
+  width 100%
+  display block
+  border-radius $radiusCard
+  position relative
+  box-shadow -1px 15px 30px -12px rgba(0, 0, 0, .2)
+  margin 0 auto
+  transition all .3s
+  text-align center
+
+
+  p:not(.card-body-text)
+    text-align justify
+    font-size 1.2rem
+    line-height 2rem
+    font-weight regular
+    & + p
+      margin-top 25px
+
+  &:hover
+    box-shadow -1px 15px 30px -12px rgba(0, 0, 0, .3)
+
+  // Card Header
+  &-header
+    height 150px
+    border-radius $radiusCard $radiusCard 0 0
+    margin 0
+    position relative
+
+    & + .card-body
+      margin-top 25px
+
+    &.cover
+      cover()
+
+  // Card Body
+  &-body
+    padding 10px
+
+    & + .card-footer
+        margin-top 25px
+
+    &-title
+      color $primary
+      font-size 1.2rem
+      margin-bottom 25px
+
+    &-text
+      font-size .8rem
+      font-weight 300
+      margin 0
+      color $primary
+      line-height 1rem
+
+      &.resumed
+        white-space nowrap
+        text-overflow ellipsis
+        width 100%
+        display block
+        overflow hidden
+
+
+  // Card Footer
+  &-footer
+    display flex
+    justify-content center
+    align-items center
+    border-radius 0 0 $radiusCard $radiusCard
+
+    &-item
+      display block
+      padding 20px
+      border-left 1px solid rgba(0, 0, 0, .05)
+      font-size .8rem
+      color $primary
+      font-weight 900
+      text-transform uppercase
+
+      &:first-child
+        border-left none
