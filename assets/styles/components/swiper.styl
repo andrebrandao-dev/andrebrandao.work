@@ -1,0 +1,23 @@
+.swiper
+
+  // Pagination
+  &-pagination
+    position relative
+    display flex
+    align-items center
+    justify-content center
+    width 100%
+    padding 10px 0
+    &-bullet
+      width 12px
+      height 12px
+      opacity 1
+      border 2px solid $primary
+      background transparent
+      margin 4px
+      transition all .3s
+      &-active
+        background $primary
+        box-shadow 0 0 0 2px rgba($primary, .5)
+      &:focus
+        outline none

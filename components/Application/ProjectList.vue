@@ -8,7 +8,7 @@
           </div>
           <div class="card-body">
             <h3 class="card-body-title">{{ project.title }}</h3>
-            <p class="card-body-text resumed">{{ project.content }}</p>
+            <p class="card-body-text resumed">{{ project.company }}</p>
           </div>
           <div class="card-footer" :style="{ backgroundColor: project.color }">
             <span class="card-footer-item" v-for="tag in project.tags">{{ tag }}</span>

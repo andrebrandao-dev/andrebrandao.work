@@ -1,23 +1,62 @@
 <template>
-  <Section color="ligth" :sectionHeader="sectionHeader">
-    <div slot="body" class="section-body">
-      <div class="container">
-        <div class="swiper-container" ref="swiperAbout">
-          <div class="swiper-wrapper">
-            <!-- Professional -->
-            <div class="swiper-slide">
-              Profissional
+  <div>
+    <Section color="ligth" :sectionHeader="sectionHeader">
+      <div slot="body" class="section-body">
+        <div class="container">
+          <div class="swiper-container" ref="swiperAbout">
+            <div class="swiper-wrapper">
+              <!-- Professional -->
+              <div class="swiper-slide">
+                <p class="text-about">
+                  Trabalhar com desenvolvimento de sites e aplicações web, sempre buscando por
+                  tecnologias atuais, prezando pela qualidade do serviço.
+                </p>
+              </div>
+              <!-- Personal -->
+              <div class="swiper-slide">
+                <p class="text-about">
+                  Trabalhar com desenvolvimento de sites e aplicações web, sempre buscando por
+                  tecnologias atuais, prezando pela qualidade do serviço.
+                </p>
+              </div>
             </div>
-            <!-- Personal -->
-            <div class="swiper-slide">
-              Pessoal
+          </div>
+          <div class="swiper-pagination" ref="swiperAboutPagination"></div>
+        </div>
+      </div>
+    </Section>
+    <Section color="success" :sectionHeader="sectionAboutHeader">
+      <div slot="body" class="section-body">
+        <div class="container">
+          <div class="columns courses">
+            <div class="col half">
+              <div class="img-courses">
+                <a href="https://cursos.alura.com.br/user/andrebf4" target="_blank">
+                  <img class="img-fluid" src="~/static/images/alura-logo.svg" alt="Alura">
+                </a>
+              </div>
+            </div>
+            <div class="col half">
+              <div class="img-courses">
+                <a href="https://www.udemy.com/user/andre-brandao-8/" target="_blank">
+                  <img class="img-fluid" src="~/static/images/udemy-logo.svg" alt="Udemy">
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="swiper-pagination" ref="swiperAboutPagination"></div>
       </div>
-    </div>
-  </Section>
+    </Section>
+    <Section color="ligth" :sectionHeader="sectionPDF">
+      <div slot="body" class="section-body">
+        <div class="container">
+          <div class="t-center">
+            <a class="btn btn-primary" target="_blank" :href="pdflink" title="Download PDF">Download PDF</a>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </div>
 </template>
 
 <script>
@@ -34,12 +73,25 @@ export default {
   },
   data() {
     return {
+      pdflink: 'https://firebasestorage.googleapis.com/v0/b/andrebrandao-work.appspot.com/o/Curriculo%2C%20Andr%C3%A9%20Brand%C3%A3o%20Ferreira.pdf?alt=media&token=4a1393ba-2781-4913-836c-cf2c64c590bb',
       swiperAbout: null,
       sectionHeader: {
         title: 'Sobre',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         animation: 'fadeInRight',
         icon: 'ion-md-person'
+      },
+      sectionAboutHeader: {
+        title: 'Cursos',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        animation: 'fadeInRight',
+        icon: 'ion-md-laptop'
+      },
+      sectionPDF: {
+        title: 'Currículo',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        animation: 'fadeInRight',
+        icon: 'ion-md-download'
       }
     }
   },
@@ -49,15 +101,68 @@ export default {
   },
   methods: {
     initSwiper() {
+      let that = this
+
       this.swiperAbout = new Swiper(this.$refs.swiperAbout, {
         slidePerView: 1,
         pagination: {
           el: this.$refs.swiperAboutPagination,
           type: 'bullets',
           clickable: true
+        },
+        on: {
+          slideChange: function() {
+            if (this.realIndex === 0) {
+              that.sectionHeader.title = 'Profissional'
+              that.sectionHeader.subtitle = 'subtitle Profissional'
+              that.sectionHeader.icon = 'ion-md-code-working'
+            }
+            if (this.realIndex === 1) {
+              that.sectionHeader.title = 'Pessoal'
+              that.sectionHeader.subtitle = 'subtitle Pessoal'
+              that.sectionHeader.icon = 'ion-md-person'
+            }
+          }
         }
       })
     },
   }
 }
 </script>
+
+<style scoped lang="stylus">
+.text-about
+  text-align justify
+  font-size 1.2rem
+  line-height 2rem
+  font-weight regular
+  padding 10px 0 25px 0
+  text-align center
+
+.columns.courses
+  .col.half
+    display flex
+    align-items center
+    justify-content center
+    @media(max-width 440px)
+      width 100%
+
+.img-courses
+  width 350px
+  height 80px
+  padding 15px
+  border-radius 10px
+  display flex
+  align-items center
+  justify-content center
+  background-color #edd8b7
+  box-shadow -1px 15px 30px -12px rgba(0, 0, 0, .3)
+
+  .img-fluid
+    max-height 40px
+
+  @media(max-width 440px)
+    width 100%
+    height auto
+    margin 5px 0
+</style>
