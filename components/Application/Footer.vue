@@ -1,6 +1,12 @@
 <template>
-  <Footer class="app-footer">
-  </Footer>
+  <footer class="app-footer">
+    <p class="app-footer-text">
+      Desenvolvido com <a href="https://nuxtjs.org/" target="_blank">NUXT</a> e
+      <a href="https://firebase.google.com/" target="_blank"> Firebase</a>
+      <br>
+      <i class="ion ion-md-heart"></i>
+    </p>
+  </footer>
 </template>
 
 <script>
