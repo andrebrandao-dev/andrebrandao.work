@@ -5,6 +5,7 @@
       <notifications group="form-feedback"></notifications>
     </div>
 
+    <Loading v-if="isLoading" message="Sending message"/>
     <Section :color="notFound ? 'warning' : 'ligth'" :sectionHeader="sectionProjectsHeader" v-if="project || notFound">
       <div slot="body" class="section-body">
         <div class="container">
@@ -66,7 +67,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['activedProjects'])
+    ...mapGetters(['activedProjects', 'isLoading'])
   },
   mounted () {
     this.findProject()
