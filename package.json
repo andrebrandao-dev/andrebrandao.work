@@ -17,6 +17,7 @@
     "chart.js": "^2.7.2",
     "firebase": "^5.0.4",
     "ionicons": "^4.1.2",
+    "is-email-valid": "^1.0.1",
     "js-cookie": "^2.2.0",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",

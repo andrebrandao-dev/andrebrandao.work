@@ -1,5 +1,5 @@
 <template>
-  <div class="form-group">
+  <div class="form-group" :class="hasError ? 'has-error' : ''">
     <label :title="label">
       <input
         class="form-group-control"
@@ -9,6 +9,7 @@
         :value="value"
         @input="$emit('input', $event.target.value)"
         @change="$emit('change', $event)"
+        @blur="$emit('blur', $event)"
       >
       <textarea
         class="form-group-control textarea"
@@ -17,6 +18,7 @@
         rows="10"
         :value="value"
         @input="$emit('input', $event.target.value)"
+        @blur="$emit('blur', $event)"
       >
       </textarea>
       <i class="form-group-icon ion" :class="icon"></i>
@@ -34,6 +36,10 @@ export default {
     controlType: {
       type: String,
       default: 'input'
+    },
+    hasError: {
+      type: Boolean,
+      default: false
     },
     helper: {
       type: Boolean,
