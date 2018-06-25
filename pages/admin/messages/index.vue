@@ -110,9 +110,6 @@ export default {
       }
     }
   },
-  mounted() {
-    console.log(this.messages);
-  },
   methods: {
     onReadMessage(id) {
       const index = findIndex(this.messages, (message) => message.id === id)

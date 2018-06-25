@@ -1,5 +1,10 @@
 <template>
   <div class="">
+
+    <div>
+      <notifications group="form-feedback"></notifications>
+    </div>
+
     <Section :color="notFound ? 'warning' : 'ligth'" :sectionHeader="sectionProjectsHeader" v-if="project || notFound">
       <div slot="body" class="section-body">
         <div class="container">
@@ -8,13 +13,22 @@
               <p class="card-body-text">{{ project.content }}</p>
             </div>
           </div>
+          <!-- Project Not Found -->
           <div class="t-center" v-if="notFound">
-            <nuxt-link class="btn btn-primary" exact to="/" title="Home">
-              Got To Home
+            <nuxt-link class="btn btn-primary" exact to="/" title="Página inicial">
+              Página inicial
             </nuxt-link>
-            <nuxt-link class="btn btn-primary" exact to="/projects" title="More projects">
-              More projects
+            <nuxt-link class="btn btn-primary" exact to="/projects" title="Todos Projetos">
+              Todos Projetos
             </nuxt-link>
+
+            <div class="form-contact">
+              <hr>
+
+              <h3 class="form-contact-title">Entre em contato!</h3>
+              <FormContact @submitForm="onSubmit" />
+            </div>
+
           </div>
         </div>
       </div>
@@ -28,12 +42,16 @@ import * as _ from 'lodash'
 
 // Components
 import Section from '@/components/UI/Section'
+import FormContact from '@/components/Application/FormContact'
+import Loading from '@/components/UI/Loading'
 
 export default {
   name: 'page-projects-index',
   middleware: ['menu', 'check-auth'],
   components: {
-    Section
+    Section,
+    FormContact,
+    Loading
   },
   data () {
     return {
@@ -62,8 +80,8 @@ export default {
         this.notFound = true
 
         this.sectionProjectsHeader = {
-          title: 'Project Not Found',
-          subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+          title: 'Projeto não encontrado',
+          subtitle: 'Estranho, não consegui achar esse projeto :X',
           animation: 'fadeInRight',
           icon: 'ion-md-bug'
         }
@@ -72,11 +90,26 @@ export default {
         this.project = this.activedProjects[index]
         this.sectionProjectsHeader.title = this.project.title
       }
+    },
+    onSubmit(success) {
+      this.$notify({
+        group: 'form-feedback',
+        type: success ? 'success' : 'warn',
+        title: success ? 'Mensagem enviada' : 'Mensagem não enviada',
+        text: success ? 'Obrigado pelo contato, logo retornarei' : 'Tente mais tarde'
+      });
     }
   }
 }
 </script>
 
 <style scoped lang="stylus">
+.form-contact
+  margin-top 50px
+
+  &-title
+    font-size 2rem
+    font-weight 300
+    margin 50px 0
 
 </style>
