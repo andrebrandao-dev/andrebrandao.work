@@ -43,6 +43,8 @@ export default {
 <style scoped lang="stylus">
   .col
     width 33.333%
+    padding-top 15px
+    padding-bottom 15px
     @media (max-width 767px)
       width 100%
 
