@@ -2,7 +2,10 @@
   <Section color="ligth" :sectionHeader="sectionProjectsHeader">
     <div slot="body" class="section-body">
       <div class="container">
-        <ProjectList :limit="10" />
+        <!-- <ProjectList :limit="10" /> -->
+        <div class="t-center">
+          <p class="comming-soon wow fadeIn">Chegando em breve!</p>
+        </div>
       </div>
     </div>
   </Section>
@@ -45,4 +48,10 @@ export default {
   .columns.projects
     .col
       width 33.333%
+
+  .comming-soon
+    font-size 1.8rem
+    line-height 2rem
+    font-weight 300
+    margin 0
 </style>
