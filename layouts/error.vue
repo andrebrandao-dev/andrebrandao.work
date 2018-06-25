@@ -17,7 +17,7 @@
           <div class="form-contact">
             <hr>
 
-            <h3 class="form-contact-title">Entre em contato!</h3>
+            <h3 class="form-contact-title">Não encontrou a informação que precisava? <br>Entre em contato!</h3>
             <FormContact @submitForm="onSubmit" />
           </div>
 
@@ -46,8 +46,8 @@ export default {
   data () {
     return {
       sectionHeader: {
-        title: 'Oops, something went wrong!',
-        subtitle: 'Back to safety',
+        title: 'Que feio servidor, você não pode fazer isso :(',
+        subtitle: '',
         animation: 'bounceIn',
         icon: 'ion-md-bug'
       }
@@ -79,6 +79,7 @@ export default {
 
   &-title
     font-size 2rem
+    line-height 2.5rem
     font-weight 300
     margin 50px 0
 

@@ -6,13 +6,12 @@
         <div class="wow fadeInDown">
           <Gravatar class="avatar avatar-ligth" :email="my.email"/>
           <h1 class="section-about-title">
-            Hi, I'm
-            <strong>{{ my.name }}</strong>
+            {{ my.name }}
           </h1>
         </div>
 
         <nuxt-link class="btn-outline btn-outline-ligth wow fadeInUp" exact to="/about" title="More about me">
-          More about me
+          Mais sobre mim
         </nuxt-link>
       </div>
     </section>
@@ -21,32 +20,38 @@
     <Section color="ligth" :sectionHeader="sectionProjectsHeader">
       <div slot="body" class="section-body">
         <div class="container">
-          <ProjectList :limit="3" />
+          <!-- <ProjectList :limit="3" /> -->
+          <div class="t-center">
+            <p class="comming-soon wow fadeIn">Chegando em breve!</p>
+          </div>
         </div>
       </div>
-      <div slot="footer" class="section-footer">
+      <!-- <div slot="footer" class="section-footer">
         <div class="t-center">
           <nuxt-link class="btn btn-success" exact to="/projects" title="More projects">
             Todos Projetos
           </nuxt-link>
         </div>
-      </div>
+      </div> -->
     </Section>
 
     <!-- Articles Section -->
     <Section color="success" :sectionHeader="sectionArticlesHeader">
       <div slot="body" class="section-body">
         <div class="container">
-          <ArticleList :limit="3" />
+          <!-- <ArticleList :limit="3" /> -->
+          <div class="t-center">
+            <p class="comming-soon wow fadeIn">Chegando em breve!</p>
+          </div>
         </div>
       </div>
-      <div slot="footer" class="section-footer">
+      <!-- <div slot="footer" class="section-footer" v-if="$store.articles">
         <div class="t-center">
           <nuxt-link class="btn btn-ligth" exact to="/articles" title="Ver Todos No Medium">
             Mais Artigos
           </nuxt-link>
         </div>
-      </div>
+      </div> -->
     </Section>
 
   </div>
@@ -71,14 +76,14 @@ export default {
   data() {
     return {
       sectionProjectsHeader: {
-        title: 'Projects',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        title: 'Projetos',
+        subtitle: 'Saiba mais sobre os trabalhos em que participei.',
         animation: 'fadeInRight',
         icon: 'ion-md-code-working'
       },
       sectionArticlesHeader: {
-        title: 'Articles',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        title: 'Artigos',
+        subtitle: 'Textos sobre as minhas experiências, dicas e aprendizados.',
         animation: 'fadeInLeft',
         icon: 'ion-md-book'
       },
@@ -98,4 +103,10 @@ export default {
   .columns.projects
     .col
       width 33.333%
+
+  .comming-soon
+    font-size 1.8rem
+    line-height 2rem
+    font-weight 300
+    margin 0
 </style>

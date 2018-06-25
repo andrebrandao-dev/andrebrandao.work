@@ -14,19 +14,19 @@
 
     <ul class="app-nav-list start side" :class="{ 'is-opened': menuIsClosed }">
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" exact to="/" title="Home">Home</nuxt-link>
+        <nuxt-link class="app-nav-link" exact to="/" title="Início">Início</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" exact to="/about" title="About">About</nuxt-link>
+        <nuxt-link class="app-nav-link" exact to="/about" title="Sobre">Sobre</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" to="/projects" title="Projects">Projects</nuxt-link>
+        <nuxt-link class="app-nav-link" to="/projects" title="Projetos">Projetos</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" exact to="/articles" title="Articles">Articles</nuxt-link>
+        <nuxt-link class="app-nav-link" exact to="/articles" title="Artigos">Artigos</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" exact to="/contact" title="Contact">Contact</nuxt-link>
+        <nuxt-link class="app-nav-link" exact to="/contact" title="Contato">Contato</nuxt-link>
       </li>
     </ul>
 

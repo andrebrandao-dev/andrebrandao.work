@@ -34,7 +34,7 @@ export default {
     return {
       sectionHeader: {
         title: 'Contato',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        subtitle: 'Entre em contato comigo através do formulário abaixo.',
         animation: 'fadeInRight',
         icon: 'ion-md-mail'
       }

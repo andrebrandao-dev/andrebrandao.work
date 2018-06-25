@@ -29,8 +29,8 @@ export default {
   data () {
     return {
       sectionArticlesHeader: {
-        title: 'Articles',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        title: 'Artigos',
+        subtitle: 'Textos sobre as minhas experiências, dicas e aprendizados.',
         animation: 'fadeInLeft',
         icon: 'ion-md-book'
       },

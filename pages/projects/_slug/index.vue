@@ -53,7 +53,7 @@
             <div class="form-contact">
               <hr>
 
-              <h3 class="form-contact-title">Entre em contato!</h3>
+              <h3 class="form-contact-title">Não encontrou a informação que precisava? <br>Entre em contato!</h3>
               <FormContact @submitForm="onSubmit" />
             </div>
           </div>
@@ -148,6 +148,7 @@ export default {
 
   &-title
     font-size 2rem
+    line-height 2.5rem
     font-weight 300
     margin 50px 0
 

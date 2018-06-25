@@ -25,8 +25,8 @@ export default {
   data () {
     return {
       sectionProjectsHeader: {
-        title: 'Projects',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        title: 'Projetos',
+        subtitle: 'Saiba mais sobre os trabalhos em que participei.',
         animation: 'fadeInRight',
         icon: 'ion-md-code-working'
       },

@@ -30,8 +30,7 @@ const createStore = () => {
         let parser = new Parser()
 
         return (async () => {
-          // const articles = parser.parseURL('https://medium.com/feed/andrebf')
-          const articles = parser.parseURL('https://medium.com/feed/receitasparasefazer')
+          const articles = parser.parseURL('https://medium.com/feed/andrebf')
             .then(response => {
               vuexContext.commit('setArticles', response.items)
             })
