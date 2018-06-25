@@ -11,7 +11,6 @@
         <div class="container">
           <!-- Project Found -->
           <div v-if="!notFound">
-
             <div class="project-cover" :style="{ backgroundImage: `url(${ project.thumbnail })` }">
               <span class="sr-only">{{ project.title }}</span>
             </div>
@@ -21,8 +20,22 @@
             </div>
 
             <div class="card">
-              <div class="card-body t-left">
-                <p class="card-body-text">{{ project.content }}</p>
+              <div class="card-header flex flex-align-center flex-justify-center">
+                <a v-if="project.access.web" :href="project.access.web" title="Acessar: Web">
+                  <i class="icon-circled icon-circled-primary ion ion-md-globe"></i>
+                  <span class="sr-only">Acessar: Web</span>
+                </a>
+                <a v-if="project.access.android" :href="project.access.android" title="Acessar: PlayStore">
+                  <i class="icon-circled icon-circled-primary ion ion-logo-android"></i>
+                  <span class="sr-only">Acessar: PlayStore</span>
+                </a>
+                <a v-if="project.access.ios" :href="project.access.ios" title="Acessar: AppleStore">
+                  <i class="icon-circled icon-circled-primary ion ion-logo-apple"></i>
+                  <span class="sr-only">Acessar: AppleStore</span>
+                </a>
+              </div>
+              <div class="card-body">
+                <div v-html="project.content"></div>
               </div>
             </div>
 
@@ -103,6 +116,7 @@ export default {
       } else {
         this.project = this.activedProjects[index]
         this.sectionProjectsHeader.title = this.project.title
+        this.sectionProjectsHeader.subtitle = this.project.company
       }
     },
     onSubmit(success) {
@@ -118,6 +132,17 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+.card-header
+  height auto
+  padding-top 25px
+  a
+    margin 5px
+
+.card-body
+  padding-left 25px
+  padding-right 25px
+  padding-bottom 25px
+
 .form-contact
   margin-top 50px
 
