@@ -37,21 +37,7 @@ export default {
     }
   },
   mounted() {
-    this.viewCont()
-  },
-  methods: {
-    viewCont() {
-      return this.$axios.get(`${ process.env.baseUrl }/pageViews.json`)
-        .then(response => {
-          const data = response.data
-          data.articles++
-
-          this.$axios.put(`${ process.env.baseUrl }/pageViews.json`, data)
-        })
-        .catch(err => {
-          console.log(err)
-        })
-    }
+    this.$store.dispatch('countPageView', 'articles')
   }
 }
 </script>

@@ -44,7 +44,7 @@ export default {
     ...mapGetters(['isLoading'])
   },
   mounted() {
-    this.viewCont()
+    this.$store.dispatch('countPageView', 'contact')
   },
   methods: {
     onSubmit(success) {
@@ -54,18 +54,6 @@ export default {
         title: success ? 'Mensagem enviada' : 'Mensagem não enviada',
         text: success ? 'Obrigado pelo contato, logo retornarei' : 'Tente mais tarde'
       });
-    },
-    viewCont() {
-      return this.$axios.get(`${ process.env.baseUrl }/pageViews.json`)
-        .then(response => {
-          const data = response.data
-          data.contact++
-
-          this.$axios.put(`${ process.env.baseUrl }/pageViews.json`, data)
-        })
-        .catch(err => {
-          console.log(err)
-        })
     }
   }
 }
