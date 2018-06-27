@@ -3,9 +3,6 @@
     <div slot="body" class="section-body">
       <div class="container">
         <ArticleList :limit="9" />
-        <div class="t-center">
-          <p class="comming-soon wow fadeIn">Chegando em breve!</p>
-        </div>
       </div>
     </div>
     <div slot="footer" class="section-footer">
