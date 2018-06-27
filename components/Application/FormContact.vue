@@ -30,7 +30,7 @@
               class="btn btn-primary"
               type="submit"
               title="Enviar"
-              :disabled="form.name === '' || form.email === '' || form.message === ''"
+              :disabled="form.name === '' || form.email === '' || form.message === '' || nameError || msgError || emailError"
             >
               Enviar
             </Button>
@@ -44,8 +44,7 @@
 <script>
 import axios from 'axios'
 import moment from 'moment'
-// import { isEmailValid } from 'is-email-valid'
-
+import * as EmailValidator from 'email-validator'
 
 // Components
 import Input from '@/components/UI/Input'
@@ -67,8 +66,6 @@ export default {
       }
     }
   },
-  mounted() {
-  },
   methods: {
     onBlur(event, type) {
       if (type === 'name') {
@@ -81,7 +78,9 @@ export default {
       }
 
       if (type === 'email') {
-        if (this.form.email === '') {
+        const emailValid = EmailValidator.validate(this.form.email)
+
+        if (!emailValid) {
           this.emailError = true
           return
         }
