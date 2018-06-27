@@ -8,11 +8,21 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'André Brandão - in development',
+    title: 'André Brandão',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      // { hid: 'description', name: 'description', content: pkg.description }
+      { name: 'theme-color', content: '#333132' },
+      { name: 'msapplication-navbutton-color', content: '#333132' },
+      { name: 'apple-mobile-web-app-status-bar-style', content: '#333132' },
+      { property: 'og:locale', content: 'pt_BR' },
+      { property: 'og:url', content: 'http://www.andrebrandao.work' },
+      { property: 'og:type', content: 'portfolio' },
+      { property: 'og:title', content: 'André Brandão Desenvolvedor: Portfólio' },
+      { property: 'og:description', content: 'Portfólio e Artigos sobre Desenvolvimento' },
+      { property: 'og:image', content: 'https://firebasestorage.googleapis.com/v0/b/andrebrandao-work.appspot.com/o/screenshot.png?alt=media&token=c90593f4-5eed-491c-a338-fc62b4538bb8' },
+      { property: 'og:image:width', content: '997' },
+      { property: 'og:image:height', content: '352' }
     ],
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js' }

@@ -2,10 +2,7 @@
   <Section color="ligth" :sectionHeader="sectionProjectsHeader">
     <div slot="body" class="section-body">
       <div class="container">
-        <!-- <ProjectList :limit="10" /> -->
-        <div class="t-center">
-          <p class="comming-soon wow fadeIn">Chegando em breve!</p>
-        </div>
+        <ProjectList :limit="10" />
       </div>
     </div>
   </Section>
