@@ -20,38 +20,32 @@
     <Section color="ligth" :sectionHeader="sectionProjectsHeader">
       <div slot="body" class="section-body">
         <div class="container">
-          <!-- <ProjectList :limit="3" /> -->
-          <div class="t-center">
-            <p class="comming-soon wow fadeIn">Chegando em breve!</p>
-          </div>
+          <ProjectList :limit="3" />
         </div>
       </div>
-      <!-- <div slot="footer" class="section-footer">
+      <div slot="footer" class="section-footer">
         <div class="t-center">
           <nuxt-link class="btn btn-success" exact to="/projects" title="More projects">
             Todos Projetos
           </nuxt-link>
         </div>
-      </div> -->
+      </div>
     </Section>
 
     <!-- Articles Section -->
     <Section color="success" :sectionHeader="sectionArticlesHeader">
       <div slot="body" class="section-body">
         <div class="container">
-          <!-- <ArticleList :limit="3" /> -->
-          <div class="t-center">
-            <p class="comming-soon wow fadeIn">Chegando em breve!</p>
-          </div>
+          <ArticleList :limit="3" />
         </div>
       </div>
-      <!-- <div slot="footer" class="section-footer" v-if="$store.articles">
+      <div slot="footer" class="section-footer" v-if="$store.articles">
         <div class="t-center">
           <nuxt-link class="btn btn-ligth" exact to="/articles" title="Ver Todos No Medium">
             Mais Artigos
           </nuxt-link>
         </div>
-      </div> -->
+      </div>
     </Section>
 
   </div>

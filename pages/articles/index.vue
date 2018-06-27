@@ -2,19 +2,19 @@
   <Section color="success" :sectionHeader="sectionArticlesHeader">
     <div slot="body" class="section-body">
       <div class="container">
-        <!-- <ArticleList :limit="9" /> -->
+        <ArticleList :limit="9" />
         <div class="t-center">
           <p class="comming-soon wow fadeIn">Chegando em breve!</p>
         </div>
       </div>
     </div>
-    <!-- <div slot="footer" class="section-footer">
+    <div slot="footer" class="section-footer">
       <div class="t-center">
         <a class="btn btn-ligth" href="https://medium.com/andrebf" title="Ver Todos No Medium" target="_blank">
           Ver Todos No Medium
         </a>
       </div>
-    </div> -->
+    </div>
   </Section>
 </template>
 
