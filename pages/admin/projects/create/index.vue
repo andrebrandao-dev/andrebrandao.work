@@ -40,8 +40,9 @@ export default {
       },
       project: {
         title: '', slug: '', company: '',
-        thumbnail: '', color: '#',
+        thumbnail: '',
         tags: [],
+        created_at: '',
         access: {
           web: '', android: '', ios: ''
         },

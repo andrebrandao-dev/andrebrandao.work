@@ -10,11 +10,8 @@
             <div class="col half">
               <Input label="Company" icon="ion-md-business" v-model="project.company" />
             </div>
-            <div class="col half">
+            <div class="col">
               <Input label="Thumbnail" icon="ion-md-image" v-model="project.thumbnail" />
-            </div>
-            <div class="col half">
-              <Input label="Color" icon="ion-md-color-palette" v-model="project.color" />
             </div>
             <div class="col half">
               <Input
@@ -95,7 +92,7 @@ export default {
 
     submitForm () {
       this.project.slug = slug(this.project.title).toLowerCase()
-
+      this.project.created_at = new Date()
       if (this.isNew) {
         this.sendProject(this.project)
           .then(() => {
@@ -141,7 +138,7 @@ export default {
 
   .form
     max-width 767px
-    margin 0 auto
+    margin 50px auto 0 auto
 
     &-body
       margin 15px

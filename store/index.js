@@ -1,6 +1,7 @@
 import Vuex from 'vuex'
 import Parser from 'rss-parser'
 import axios from 'axios'
+import * as _ from 'lodash'
 
 // Modules
 import moduleGeneral from './general'
@@ -44,7 +45,8 @@ const createStore = () => {
                   ...response.data[key]
                 })
               }
-              vuexContext.commit('setProjects', projects)
+              const orderedProject = _.orderBy(projects, ['created_at'], ['desc'])
+              vuexContext.commit('setProjects', orderedProject)
             })
             .catch(e => {
               console.log(e)
