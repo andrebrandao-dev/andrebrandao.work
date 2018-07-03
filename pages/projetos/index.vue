@@ -18,6 +18,9 @@ import ProjectList from '@/components/Application/ProjectList'
 export default {
   name: 'page-projects-index',
   middleware: ['menu', 'check-auth'],
+  head: {
+    title: 'Projetos: André Brandão'
+  },
   components: {
     Section,
     ProjectList

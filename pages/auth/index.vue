@@ -20,6 +20,9 @@ import FormLogin from '@/components/Auth/FormLogin'
 export default {
   name: 'page-auth',
   middleware: ['check-auth', 'login'],
+  head: {
+    title: 'Login: André Brandão'
+  },
   components: {
     Section,
     FormLogin

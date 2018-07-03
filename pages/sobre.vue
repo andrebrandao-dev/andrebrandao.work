@@ -68,6 +68,9 @@ import Section from '@/components/UI/Section'
 export default {
   name: 'page-about',
   middleware: ['menu', 'check-auth'],
+  head: {
+    title: 'Sobre: André Brandão'
+  },
   components: {
     Section
   },

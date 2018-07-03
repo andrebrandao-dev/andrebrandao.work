@@ -75,6 +75,9 @@ import Loading from '@/components/UI/Loading'
 export default {
   name: 'page-projects-index',
   middleware: ['menu', 'check-auth'],
+  head: {
+    title: `Projeto: André Brandão`
+  },
   components: {
     Section,
     FormContact,
