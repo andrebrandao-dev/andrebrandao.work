@@ -20,13 +20,13 @@
         <nuxt-link class="app-nav-link" exact to="/admin" title="Admin">Admin</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" exact to="/admin/projects" title="Projects">Projects</nuxt-link>
+        <nuxt-link class="app-nav-link" exact to="/admin/projects" title="Projetos">Projetos</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" exact to="/admin/recommendations" title="Recommendations">Recommendations</nuxt-link>
+        <nuxt-link class="app-nav-link" exact to="/admin/recommendations" title="Recomendações">Recomendações</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" exact to="/admin/messages" title="Messages">Messages</nuxt-link>
+        <nuxt-link class="app-nav-link" exact to="/admin/messages" title="Mensagens">Mensagens</nuxt-link>
       </li>
     </ul>
 

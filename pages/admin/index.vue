@@ -100,13 +100,13 @@ export default {
     return {
       sectionHeader: {
         title: 'Dashboard',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        subtitle: 'Gerencie o conteúdo.',
         animation: 'fadeInRight',
         icon: 'ion-md-apps'
       },
       sectionHeaderAnalytics: {
-        title: 'Analytics',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        title: 'Visitas',
+        subtitle: 'Gráfico de visitas no site.',
         animation: 'fadeInLeft',
         icon: 'ion-md-analytics'
       }
