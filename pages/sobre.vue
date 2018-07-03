@@ -76,7 +76,7 @@ export default {
   },
   data() {
     return {
-      pdflink: 'https://firebasestorage.googleapis.com/v0/b/andrebrandao-work.appspot.com/o/Curriculo%2C%20Andr%C3%A9%20Brand%C3%A3o%20Ferreira.pdf?alt=media&token=4a1393ba-2781-4913-836c-cf2c64c590bb',
+      pdflink: 'https://firebasestorage.googleapis.com/v0/b/andrebrandao-work.appspot.com/o/Curr%C3%ADculo%20-%20Andr%C3%A9%20Brand%C3%A3o.pdf?alt=media&token=9dcf40d9-e93c-4b1c-b56a-e2856c3914a3',
       swiperAbout: null,
       sectionHeader: {
         title: 'Profissional',
