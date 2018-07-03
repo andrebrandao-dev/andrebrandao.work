@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div>
+      <notifications group="reset-feedback"></notifications>
+    </div>
+
     <Section color="ligth" :sectionHeader="sectionHeader">
       <div slot="body" class="section-body">
         <div class="container">
@@ -126,13 +130,22 @@ export default {
         contact: 0, home: 0,
         projects: 0
       }
-
       axios.put(`${ process.env.baseUrl }/pageViews.json`, views)
         .then(res => {
-          console.log(res)
+          this.$notify({
+            group: 'reset-feedback',
+            type: 'success',
+            title: 'Visitas Zeradas!',
+            text: ''
+          })
         })
         .catch(err => {
-          console.log(err)
+          this.$notify({
+            group: 'reset-feedback',
+            type: 'warn',
+            title: 'Não foi possível zerar as visitas',
+            text: ''
+          });
         })
     }
   }
