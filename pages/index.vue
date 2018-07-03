@@ -25,7 +25,7 @@
       </div>
       <div slot="footer" class="section-footer">
         <div class="t-center">
-          <nuxt-link class="btn btn-success" exact to="/projects" title="More projects">
+          <nuxt-link class="btn btn-success" exact to="/projetos" title="More projects">
             Todos Projetos
           </nuxt-link>
         </div>
@@ -39,9 +39,9 @@
           <ArticleList :limit="3" />
         </div>
       </div>
-      <div slot="footer" class="section-footer" v-if="$store.articles">
+      <div slot="footer" class="section-footer">
         <div class="t-center">
-          <nuxt-link class="btn btn-ligth" exact to="/articles" title="Ver Todos No Medium">
+          <nuxt-link class="btn btn-ligth" exact to="/artigos" title="Ver Todos No Medium">
             Mais Artigos
           </nuxt-link>
         </div>

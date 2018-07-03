@@ -17,16 +17,16 @@
         <nuxt-link class="app-nav-link" exact to="/" title="Início">Início</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" exact to="/about" title="Sobre">Sobre</nuxt-link>
+        <nuxt-link class="app-nav-link" exact to="/sobre" title="Sobre">Sobre</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" to="/projects" title="Projetos">Projetos</nuxt-link>
+        <nuxt-link class="app-nav-link" to="/projetos" title="Projetos">Projetos</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" exact to="/articles" title="Artigos">Artigos</nuxt-link>
+        <nuxt-link class="app-nav-link" exact to="/artigos" title="Artigos">Artigos</nuxt-link>
       </li>
       <li class="app-nav-item">
-        <nuxt-link class="app-nav-link" exact to="/contact" title="Contato">Contato</nuxt-link>
+        <nuxt-link class="app-nav-link" exact to="/contato" title="Contato">Contato</nuxt-link>
       </li>
     </ul>
 
