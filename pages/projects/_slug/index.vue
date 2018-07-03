@@ -21,15 +21,15 @@
 
             <div class="card">
               <div class="card-header flex flex-align-center flex-justify-center">
-                <a v-if="project.access.web" :href="project.access.web" title="Acessar: Web">
+                <a v-if="project.access.web" :href="project.access.web" title="Acessar: Web" target="_blank">
                   <i class="icon-circled icon-circled-primary ion ion-md-globe"></i>
                   <span class="sr-only">Acessar: Web</span>
                 </a>
-                <a v-if="project.access.android" :href="project.access.android" title="Acessar: PlayStore">
+                <a v-if="project.access.android" :href="project.access.android" title="Acessar: PlayStore" target="_blank">
                   <i class="icon-circled icon-circled-primary ion ion-logo-android"></i>
                   <span class="sr-only">Acessar: PlayStore</span>
                 </a>
-                <a v-if="project.access.ios" :href="project.access.ios" title="Acessar: AppleStore">
+                <a v-if="project.access.ios" :href="project.access.ios" title="Acessar: AppleStore" target="_blank">
                   <i class="icon-circled icon-circled-primary ion ion-logo-apple"></i>
                   <span class="sr-only">Acessar: AppleStore</span>
                 </a>
@@ -88,7 +88,7 @@ export default {
         title: 'Project',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         animation: 'fadeInRight',
-        icon: 'ion-md-book'
+        icon: 'ion-md-code-working'
       }
     }
   },
