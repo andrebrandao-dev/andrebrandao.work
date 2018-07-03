@@ -10,7 +10,7 @@
           </h1>
         </div>
 
-        <nuxt-link class="btn-outline btn-outline-ligth wow fadeInUp" exact to="/about" title="More about me">
+        <nuxt-link class="btn-outline btn-outline-ligth wow fadeInUp" exact to="/sobre" title="Mais sobre mim">
           Mais sobre mim
         </nuxt-link>
       </div>
