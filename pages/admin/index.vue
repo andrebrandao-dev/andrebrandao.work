@@ -53,7 +53,14 @@
     <Section color="success" :sectionHeader="sectionHeaderAnalytics">
       <div slot="body" class="section-body">
         <div class="container">
-          <BarChart :data="chartData"/>
+          <div class="t-center">
+            <button type="button" class="btn btn-danger" @click="resetViews()">
+              Zerar
+            </button>
+          </div>
+          <div class="chart">
+            <BarChart :data="chartData"/>
+          </div>
         </div>
       </div>
     </Section>
@@ -111,6 +118,23 @@ export default {
         icon: 'ion-md-analytics'
       }
     }
+  },
+  methods: {
+    resetViews() {
+      const views = {
+        about: 0, articles: 0,
+        contact: 0, home: 0,
+        projects: 0
+      }
+
+      axios.put(`${ process.env.baseUrl }/pageViews.json`, views)
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
   }
 }
 </script>
@@ -125,5 +149,8 @@ export default {
   .card
     &-header
       height 100px
+
+  .chart
+    margin-top 50px
 
 </style>
