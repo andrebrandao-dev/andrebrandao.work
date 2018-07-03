@@ -39,8 +39,9 @@
             <div class="col is-3">
               <Input label="Acesso IOS" icon="ion-logo-apple" v-model="project.access.ios" />
             </div>
+
             <div class="col">
-              <Input label="Conteúdo" icon="ion-md-text" controlType="textarea" v-model="project.content" />
+              <VueEditor v-model="project.content" />
             </div>
 
             <div class="col">
@@ -61,6 +62,7 @@ import axios from 'axios'
 import slug from 'slug'
 
 // Components
+import { VueEditor } from 'vue2-editor'
 import Input from '@/components/UI/Input'
 import Button from '@/components/UI/Button'
 
@@ -68,7 +70,8 @@ export default {
   name: 'component-admin-form-project',
   components: {
     Input,
-    Button
+    Button,
+    VueEditor
   },
   props: {
     project: {
