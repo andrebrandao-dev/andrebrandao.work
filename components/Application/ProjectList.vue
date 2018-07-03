@@ -1,7 +1,7 @@
 <template>
   <div class="columns">
     <div class="col wow fadeInLeft" v-for="(project, index) in activedProjects" v-if="index + 1 <= limit">
-      <nuxt-link :to="`/projects/${ project.slug }`" :title="project.title">
+      <nuxt-link :to="`/projetos/${ project.slug }`" :title="project.title">
         <div class="card">
           <div class="card-header cover" :style="{ backgroundImage: `url(${ project.thumbnail })` }">
             <span class="sr-only">{{ project.title }}</span>

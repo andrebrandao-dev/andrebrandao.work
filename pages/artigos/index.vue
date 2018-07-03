@@ -22,6 +22,9 @@ import ArticleList from '@/components/Application/ArticleList'
 export default {
   name: 'page-articles-index',
   middleware: ['menu', 'check-auth'],
+  head: {
+    title: 'Artigos: André Brandão'
+  },
   components: {
     Section,
     ArticleList

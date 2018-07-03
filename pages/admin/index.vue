@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div>
+      <notifications group="reset-feedback"></notifications>
+    </div>
+
     <Section color="ligth" :sectionHeader="sectionHeader">
       <div slot="body" class="section-body">
         <div class="container">
@@ -53,7 +57,14 @@
     <Section color="success" :sectionHeader="sectionHeaderAnalytics">
       <div slot="body" class="section-body">
         <div class="container">
-          <BarChart :data="chartData"/>
+          <div class="t-center">
+            <button type="button" class="btn btn-danger" @click="resetViews()">
+              Zerar
+            </button>
+          </div>
+          <div class="chart">
+            <BarChart :data="chartData"/>
+          </div>
         </div>
       </div>
     </Section>
@@ -100,16 +111,42 @@ export default {
     return {
       sectionHeader: {
         title: 'Dashboard',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        subtitle: 'Gerencie o conteúdo.',
         animation: 'fadeInRight',
         icon: 'ion-md-apps'
       },
       sectionHeaderAnalytics: {
-        title: 'Analytics',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        title: 'Visitas',
+        subtitle: 'Gráfico de visitas no site.',
         animation: 'fadeInLeft',
         icon: 'ion-md-analytics'
       }
+    }
+  },
+  methods: {
+    resetViews() {
+      const views = {
+        about: 0, articles: 0,
+        contact: 0, home: 0,
+        projects: 0
+      }
+      axios.put(`${ process.env.baseUrl }/pageViews.json`, views)
+        .then(res => {
+          this.$notify({
+            group: 'reset-feedback',
+            type: 'success',
+            title: 'Visitas Zeradas!',
+            text: ''
+          })
+        })
+        .catch(err => {
+          this.$notify({
+            group: 'reset-feedback',
+            type: 'warn',
+            title: 'Não foi possível zerar as visitas',
+            text: ''
+          });
+        })
     }
   }
 }
@@ -125,5 +162,8 @@ export default {
   .card
     &-header
       height 100px
+
+  .chart
+    margin-top 50px
 
 </style>

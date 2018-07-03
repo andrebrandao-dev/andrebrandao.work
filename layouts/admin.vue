@@ -14,6 +14,9 @@ import Footer from '@/components/Admin/Footer'
 
 export default {
   name: 'layout-admin',
+  head: {
+    title: 'Admin: André Brandão'
+  },
   components: {
     Header,
     Footer

@@ -25,6 +25,9 @@ import Loading from '@/components/UI/Loading'
 export default {
   name: 'page-contact',
   middleware: ['menu', 'check-auth'],
+  head: {
+    title: 'Contato: André Brandão'
+  },
   components: {
     Section,
     FormContact,
