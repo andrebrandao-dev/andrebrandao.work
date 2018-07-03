@@ -5,10 +5,10 @@
         <div class="form-body">
           <div class="columns">
             <div class="col half">
-              <Input label="Title" icon="ion-md-apps" v-model="project.title" />
+              <Input label="Título" icon="ion-md-apps" v-model="project.title" />
             </div>
             <div class="col half">
-              <Input label="Company" icon="ion-md-business" v-model="project.company" />
+              <Input label="Empresa" icon="ion-md-business" v-model="project.company" />
             </div>
             <div class="col">
               <Input label="Thumbnail" icon="ion-md-image" v-model="project.thumbnail" />
@@ -31,16 +31,16 @@
               </div>
             </div>
             <div class="col is-3">
-              <Input label="Access Web" icon="ion-md-globe" v-model="project.access.web" />
+              <Input label="Acesso Web" icon="ion-md-globe" v-model="project.access.web" />
             </div>
             <div class="col is-3">
-              <Input label="Access Android" icon="ion-logo-android" v-model="project.access.android" />
+              <Input label="Acesso Android" icon="ion-logo-android" v-model="project.access.android" />
             </div>
             <div class="col is-3">
-              <Input label="Access IOS" icon="ion-logo-apple" v-model="project.access.ios" />
+              <Input label="Acesso IOS" icon="ion-logo-apple" v-model="project.access.ios" />
             </div>
             <div class="col">
-              <Input label="Content" icon="ion-md-text" controlType="textarea" v-model="project.content" />
+              <Input label="Conteúdo" icon="ion-md-text" controlType="textarea" v-model="project.content" />
             </div>
 
             <div class="col">

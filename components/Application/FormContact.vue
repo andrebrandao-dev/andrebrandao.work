@@ -5,7 +5,7 @@
         <div class="card-body">
           <div class="form-body">
             <Input
-              label="Name"
+              label="Nome"
               v-model="form.name"
               icon="ion-md-person"
               :hasError="nameError"
@@ -19,7 +19,7 @@
               @blur="onBlur($event, 'email')"
             />
             <Input
-              label="Message"
+              label="Mensagem"
               controlType="textarea"
               v-model="form.message"
               icon="ion-md-text"
