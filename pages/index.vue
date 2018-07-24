@@ -35,7 +35,7 @@
     <!-- Recommendations Section -->
     <Section color="success" :sectionHeader="sectionRecommendationsHeader">
       <div slot="body" class="section-body">
-        <div class="container">
+        <div class="container" v-if="activedRecommendations.length">
           <div ref="swiperRecommendations" class="swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="recommendation in activedRecommendations" :key="recommendation.key">

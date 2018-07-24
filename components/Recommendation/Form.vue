@@ -5,6 +5,7 @@
         <div class="form-body">
           <Input label="Nome" v-model="form.name" icon="ion-md-person" />
           <Input label="E-mail" v-model="form.email" icon="ion-md-mail" />
+          <Input label="Empresa" v-model="form.company" icon="ion-md-business" />
           <Input label="Mensagem" controlType="textarea" v-model="form.message" icon="ion-md-text" />
           <Button class="btn btn-primary" type="submit" title="Send">Send</Button>
         </div>
@@ -29,7 +30,7 @@ export default {
   data () {
     return {
       form: {
-        name: '', email: '', message: ''
+        name: '', company: '', email: '', message: ''
       }
     }
   },
