@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Loading v-if="isLoading" message="Sending recommendation"/>
+    <Loading v-if="isLoading" message="Enviando"/>
     <Section color="ligth" :sectionHeader="sectionProjectsHeader">
       <div slot="body" class="section-body">
         <div class="container">
@@ -13,7 +13,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-
 
 // Components
 import Section from '@/components/UI/Section'
@@ -31,8 +30,8 @@ export default {
   data () {
     return {
       sectionProjectsHeader: {
-        title: 'Create Recommendation',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        title: 'Nova recomendação',
+        subtitle: 'Use seu melhor e-mail para deixar sua mensagem',
         animation: 'fadeInRight',
         icon: 'ion-md-star'
       },
