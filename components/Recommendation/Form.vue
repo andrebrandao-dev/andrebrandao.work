@@ -3,9 +3,9 @@
     <div class="card wow fadeInLeft">
       <div class="card-body">
         <div class="form-body">
-          <Input label="Name" v-model="form.name" icon="ion-md-person" />
-          <Input label="Email" v-model="form.email" icon="ion-md-mail" />
-          <Input label="Message" controlType="textarea" v-model="form.message" icon="ion-md-text" />
+          <Input label="Nome" v-model="form.name" icon="ion-md-person" />
+          <Input label="E-mail" v-model="form.email" icon="ion-md-mail" />
+          <Input label="Mensagem" controlType="textarea" v-model="form.message" icon="ion-md-text" />
           <Button class="btn btn-primary" type="submit" title="Send">Send</Button>
         </div>
       </div>
@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-
 // Components
 import Input from '@/components/UI/Input'
 import Button from '@/components/UI/Button'
@@ -24,7 +22,7 @@ export default {
   name: 'component-application-form-contact',
   components: {
     Input,
-    Button
+    Button,
   },
   data () {
     return {
@@ -34,10 +32,8 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['saveProject']),
-
     submitForm() {
-      this.sendMessage(this.form)
+      console.log(this.form);
     }
   }
 }
