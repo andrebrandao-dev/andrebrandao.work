@@ -25,15 +25,36 @@
       </div>
       <div slot="footer" class="section-footer">
         <div class="t-center">
-          <nuxt-link class="btn btn-success" exact to="/projetos" title="More projects">
+          <nuxt-link class="btn btn-primary" exact to="/projetos" title="More projects">
             Todos Projetos
           </nuxt-link>
         </div>
       </div>
     </Section>
 
+    <!-- Recommendations Section -->
+    <Section color="success" :sectionHeader="sectionRecommendationsHeader">
+      <div slot="body" class="section-body">
+        <div class="container">
+          <div ref="swiperRecommendations" class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="recommendation in activedRecommendations" :key="recommendation.key">
+                <div class="recommendation">
+                  <Gravatar class="avatar avatar-ligth" :email="recommendation.email"/>
+                  <h3 class="recommendation-name">{{ recommendation.name }}</h3>
+                  <span class="tag tag-primary">{{ recommendation.company }}</span>
+                  <p class="recommendation-msg">{{ recommendation.message }}</p>
+                </div>
+              </div>
+            </div>
+            <div ref="swiperRecommendationsPagination" class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </Section>
+
     <!-- Articles Section -->
-    <Section color="success" :sectionHeader="sectionArticlesHeader">
+    <Section color="ligth" :sectionHeader="sectionArticlesHeader">
       <div slot="body" class="section-body">
         <div class="container">
           <ArticleList :limit="3" />
@@ -41,7 +62,7 @@
       </div>
       <div slot="footer" class="section-footer">
         <div class="t-center">
-          <nuxt-link class="btn btn-ligth" exact to="/artigos" title="Ver Todos No Medium">
+          <nuxt-link class="btn btn-primary" exact to="/artigos" title="Ver Todos No Medium">
             Mais Artigos
           </nuxt-link>
         </div>
@@ -52,6 +73,9 @@
 </template>
 
 <script>
+import Swiper from 'swiper'
+import { mapGetters } from 'vuex'
+
 // Components
 import Gravatar from 'vue-gravatar'
 import Section from '@/components/UI/Section'
@@ -81,14 +105,36 @@ export default {
         animation: 'fadeInLeft',
         icon: 'ion-md-book'
       },
+      sectionRecommendationsHeader: {
+        title: 'Recomendações',
+        subtitle: 'O que aqueles que trabalharam comigo tem a dizer',
+        animation: 'fadeInLeft',
+        icon: 'ion-md-star'
+      },
       my: {
         name: 'André Brandão',
         email: 'andrebf4@gmail.com'
       }
     }
   },
+  computed: {
+    ...mapGetters(['activedRecommendations'])
+  },
   mounted() {
+    this.initRecommendationSwiper()
     this.$store.dispatch('countPageView', 'home')
+  },
+  methods: {
+    initRecommendationSwiper() {
+      const swiperRecommendation = new Swiper(this.$refs.swiperRecommendations, {
+        slidesPerView: 1,
+        pagination: {
+          el: this.$refs.swiperRecommendationsPagination,
+          type: 'bullets',
+          clickable: true
+        }
+      })
+    }
   }
 }
 </script>
@@ -103,4 +149,7 @@ export default {
     line-height 2rem
     font-weight 300
     margin 0
+
+  .swiper-pagination
+    margin-top 30px
 </style>

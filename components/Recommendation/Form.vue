@@ -14,12 +14,14 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 // Components
 import Input from '@/components/UI/Input'
 import Button from '@/components/UI/Button'
 
 export default {
-  name: 'component-application-form-contact',
+  name: 'component-application-form-recommendation',
   components: {
     Input,
     Button,
@@ -32,8 +34,16 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['setLoading']),
+
     submitForm() {
-      console.log(this.form);
+      this.setLoading(true)
+
+      this.$axios.post(`${ process.env.baseUrl }/recommendations.json`, this.form)
+        .then(data => {
+          this.setLoading(false)
+          this.$router.push('/')
+        })
     }
   }
 }

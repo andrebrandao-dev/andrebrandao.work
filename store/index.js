@@ -7,6 +7,7 @@ import * as _ from 'lodash'
 import moduleGeneral from './general'
 import moduleProjects from './projects'
 import moduleArticles from './articles'
+import moduleRecommendations from './recommendations'
 import moduleAuth from './auth'
 
 const createStore = () => {
@@ -15,14 +16,16 @@ const createStore = () => {
       ...moduleGeneral.state,
       ...moduleProjects.state,
       ...moduleArticles.state,
-      ...moduleAuth.state
+      ...moduleAuth.state,
+      ...moduleRecommendations.state
     },
 
     mutations: {
       ...moduleGeneral.mutations,
       ...moduleProjects.mutations,
       ...moduleArticles.mutations,
-      ...moduleAuth.mutations
+      ...moduleAuth.mutations,
+      ...moduleRecommendations.mutations
     },
 
     actions: {
@@ -52,21 +55,39 @@ const createStore = () => {
               console.log(e)
             })
 
-          const promises = await Promise.all([articles, projects])
+          const recommendations = axios.get(`${ process.env.baseUrl }/recommendations.json`)
+            .then(response => {
+              const recommendations = []
+              for (const key in response.data) {
+                recommendations.push({
+                  id: key,
+                  ...response.data[key]
+                })
+              }
+              vuexContext.commit('setRecommendations', recommendations)
+            })
+            .catch(e => {
+              console.log(e)
+            })
+
+
+          const promises = await Promise.all([articles, projects, recommendations])
         })()
 
       },
       ...moduleGeneral.actions,
       ...moduleProjects.actions,
       ...moduleArticles.actions,
-      ...moduleAuth.actions
+      ...moduleAuth.actions,
+      ...moduleRecommendations.actions
     },
 
     getters: {
       ...moduleGeneral.getters,
       ...moduleProjects.getters,
       ...moduleArticles.getters,
-      ...moduleAuth.getters
+      ...moduleAuth.getters,
+      ...moduleRecommendations.getters
     }
   })
 }

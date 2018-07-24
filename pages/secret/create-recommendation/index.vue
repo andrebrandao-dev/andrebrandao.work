@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Loading v-if="isLoading" message="Sending recommendation"/>
+    <Loading v-if="isLoading" message="Enviando"/>
     <Section color="ligth" :sectionHeader="sectionProjectsHeader">
       <div slot="body" class="section-body">
         <div class="container">
@@ -13,7 +13,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-
 
 // Components
 import Section from '@/components/UI/Section'
